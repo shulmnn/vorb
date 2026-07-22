@@ -438,11 +438,11 @@ final class AppModel: ObservableObject {
                 try await localWhisper.download(model: model) { [weak self] progress in
                     Task { @MainActor [weak self] in
                         guard let self,
-                              selectedProvider == .localWhisper,
-                              activeModel == model else {
+                              self.selectedProvider == .localWhisper,
+                              self.activeModel == model else {
                             return
                         }
-                        localWhisperModelState = .downloading(
+                        self.localWhisperModelState = .downloading(
                             max(0, min(1, progress))
                         )
                     }
