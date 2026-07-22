@@ -1,44 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Vorb privacy policy.">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Vorb privacy policy: local-first transcription, no account, analytics, advertising, tracking, or telemetry.">
   <title>Privacy Policy — Vorb</title>
+  <link rel="canonical" href="https://vorb.shulmnn.com/privacy/">
+  <link rel="icon" href="/assets/app-icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
-  <div class="shell">
-    <nav aria-label="Primary navigation">
-      <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>VORB</a>
-      <div class="links"><a href="/privacy">Privacy</a><a href="/support">Support</a><a href="https://github.com/shulmnn/vorb">GitHub</a></div>
-    </nav>
+<body class="legal-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="nav-shell">
+    <div class="nav-pill">
+      <a class="brand" href="/" aria-label="Vorb home"><img src="/assets/app-icon.png" width="30" height="30" alt=""><span>Vorb</span></a>
+      <nav class="nav-links" aria-label="Primary navigation"><a href="/">Home</a><a href="/privacy">Privacy</a><a href="/support">Support</a></nav>
+      <a class="nav-cta" href="https://github.com/shulmnn/vorb">GitHub</a>
+    </div>
+  </header>
 
-    <main class="document">
-      <div class="eyebrow">Legal</div>
-      <h1>Privacy Policy</h1>
-      <p class="updated">Last updated July 22, 2026</p>
-      <p>Vorb does not require an account. Amnios Group does not operate an application backend for Vorb, and the app contains no analytics, advertising, tracking, or telemetry.</p>
+  <main id="main" class="document">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated July 22, 2026</p>
+    <p>Vorb does not require an account. Amnios Group does not operate an application backend for Vorb, and the app contains no analytics, advertising, tracking, or telemetry.</p>
 
-      <h2>Audio and transcripts</h2>
-      <p>When Local Whisper is selected, audio is transcribed on the Mac and is not sent to Amnios Group or a transcription provider. Models download from the WhisperKit model repository only after the user clicks Download Model.</p>
-      <p>When a hosted or self-hosted provider is selected, Vorb sends recorded audio directly from the Mac to the endpoint chosen by the user. That provider processes the audio under its own terms and privacy policy. Amnios Group does not receive the audio or transcript.</p>
-      <p>Temporary audio files are deleted after each transcription attempt. Transcript history is optional and stored locally on the Mac.</p>
+    <h2>Audio and transcripts</h2>
+    <p>When Local Whisper is selected, audio is transcribed on the Mac and is not sent to Amnios Group or a transcription provider. Models download from the WhisperKit model repository only after the user clicks Download Model.</p>
+    <p>When a hosted or self-hosted provider is selected, Vorb sends recorded audio directly from the Mac to the endpoint chosen by the user. That provider processes the audio under its own terms and privacy policy. Amnios Group does not receive the audio or transcript.</p>
+    <p>Temporary audio files are deleted after each transcription attempt. Transcript history is optional and stored locally on the Mac.</p>
 
-      <h2>Imported models</h2>
-      <p>When the user chooses Import Existing, Vorb receives read-only access to the folder selected through the macOS file picker, validates the WhisperKit model, and copies it into Vorb’s Application Support directory. Vorb does not scan other files or folders.</p>
+    <h2>Imported models</h2>
+    <p>When the user chooses Import Existing, Vorb receives read-only access to the folder selected through the macOS file picker, validates the WhisperKit model, and copies it into Vorb’s Application Support directory. Vorb does not scan other files or folders.</p>
 
-      <h2>Credentials and clipboard</h2>
-      <p>Provider API keys are stored in macOS Keychain. Vorb accesses the clipboard only when transcript copying or automatic paste is enabled. The direct-download build may temporarily preserve and restore clipboard contents while pasting.</p>
+    <h2>Credentials and clipboard</h2>
+    <p>Provider API keys are stored in macOS Keychain. Vorb accesses the clipboard only when transcript copying or automatic paste is enabled. The direct-download build may temporarily preserve and restore clipboard contents while pasting.</p>
 
-      <h2>Your choices and deletion</h2>
-      <p>Users can disable history, delete individual transcripts, clear all history, remove downloaded models, or clear the model cache. Microphone permission can be revoked in macOS System Settings. Vorb has no server-side account or profile to export or delete.</p>
+    <h2>Your choices and deletion</h2>
+    <p>Users can disable history, delete individual transcripts, clear all history, remove downloaded models, or clear the model cache. Microphone permission can be revoked in macOS System Settings. Vorb has no server-side account or profile to export or delete.</p>
 
-      <h2>Contact</h2>
-      <p>For privacy questions, email <!--email_off--><a href="mailto:support@amnios-group.com">support@amnios-group.com</a><!--/email_off-->.</p>
-    </main>
+    <h2>Contact</h2>
+    <p>For privacy questions, email <!--email_off--><a href="mailto:support@amnios-group.com">support@amnios-group.com</a><!--/email_off-->.</p>
+  </main>
 
-    <footer><span>© 2026 Amnios Group</span><a href="/support">Support</a></footer>
-  </div>
+  <footer class="site-footer"><div class="container footer-row"><div class="footer-brand"><img src="/assets/app-icon.png" width="28" height="28" alt=""><span>Vorb</span></div><div class="footer-links"><a href="/">Home</a><a href="/support">Support</a><a href="https://github.com/shulmnn/vorb">GitHub</a></div><p>© 2026 Amnios Group</p></div></footer>
 </body>
 </html>

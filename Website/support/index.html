@@ -1,39 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Get support for Vorb.">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Get support for Vorb, the native Whisper dictation app for macOS.">
   <title>Support — Vorb</title>
+  <link rel="canonical" href="https://vorb.shulmnn.com/support/">
+  <link rel="icon" href="/assets/app-icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
-  <div class="shell">
-    <nav aria-label="Primary navigation">
-      <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>VORB</a>
-      <div class="links"><a href="/privacy">Privacy</a><a href="/support">Support</a><a href="https://github.com/shulmnn/vorb">GitHub</a></div>
-    </nav>
+<body class="legal-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="nav-shell">
+    <div class="nav-pill">
+      <a class="brand" href="/" aria-label="Vorb home"><img src="/assets/app-icon.png" width="30" height="30" alt=""><span>Vorb</span></a>
+      <nav class="nav-links" aria-label="Primary navigation"><a href="/">Home</a><a href="/privacy">Privacy</a><a href="/support">Support</a></nav>
+      <a class="nav-cta" href="https://github.com/shulmnn/vorb">GitHub</a>
+    </div>
+  </header>
 
-    <main class="document">
-      <div class="eyebrow">Help</div>
-      <h1>Support</h1>
-      <p class="lede">Questions, bug reports, and feature ideas are welcome.</p>
-      <div class="actions">
-        <!--email_off--><a class="button primary" href="mailto:support@amnios-group.com">support@amnios-group.com</a><!--/email_off-->
-        <a class="button" href="https://github.com/shulmnn/vorb/issues">Open a GitHub issue</a>
-      </div>
+  <main id="main" class="document">
+    <p class="eyebrow">Help</p>
+    <h1>Support</h1>
+    <p class="lede">Questions, bug reports, and feature ideas are welcome.</p>
+    <div class="actions">
+      <!--email_off--><a class="button button-primary" href="mailto:support@amnios-group.com">Email support</a><!--/email_off-->
+      <a class="button button-secondary" href="https://github.com/shulmnn/vorb/issues">Open a GitHub issue</a>
+    </div>
 
-      <h2>When reporting a problem</h2>
-      <p>Include your macOS version, Mac model, selected transcription provider, and the steps that reproduce the issue. Never include API keys, private recordings, or sensitive transcript text.</p>
+    <h2>When reporting a problem</h2>
+    <p>Include your macOS version, Mac model, selected transcription provider, and the steps that reproduce the issue. Never include API keys, private recordings, or sensitive transcript text.</p>
 
-      <h2>Local Whisper</h2>
-      <p>Choose Local Whisper in Transcription settings, select a model, and click Download Model. Vorb never downloads a model automatically on the first recording.</p>
+    <h2>Local Whisper</h2>
+    <p>Choose Local Whisper in Transcription settings, select a model, and click Download Model. Vorb never downloads a model automatically on the first recording.</p>
 
-      <h2>App Store build</h2>
-      <p>The Mac App Store build copies transcripts to the clipboard. Automatic cross-app paste is available only in the separately distributed direct build because App Sandbox does not permit that automation.</p>
-    </main>
+    <h2>Mac App Store build</h2>
+    <p>The Mac App Store build copies transcripts to the clipboard. Automatic cross-app paste is available only in the separately distributed direct build because App Sandbox does not permit that automation.</p>
+  </main>
 
-    <footer><span>© 2026 Amnios Group</span><a href="/privacy">Privacy Policy</a></footer>
-  </div>
+  <footer class="site-footer"><div class="container footer-row"><div class="footer-brand"><img src="/assets/app-icon.png" width="28" height="28" alt=""><span>Vorb</span></div><div class="footer-links"><a href="/">Home</a><a href="/privacy">Privacy</a><a href="https://github.com/shulmnn/vorb">GitHub</a></div><p>© 2026 Amnios Group</p></div></footer>
 </body>
 </html>
