@@ -1,1 +1,1 @@
-dikte,konuşma,metin,ses,fısıltı,çevrimdışı,pano,notlar,yazma,ses
+metne konuşma,sesten metne geçiş,dikte,transkripsiyon,ses girişi,Whisper,STT,bas konuş

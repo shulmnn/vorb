@@ -1,1 +1,1 @@
-Vorb ist jetzt für macOS mit lokalem Whisper, Bring-Your-Own-Provider-Transkription, konfigurierbaren Verknüpfungen, Zustellung in der Zwischenablage und optionalem Verlauf verfügbar.
+Vorb ist jetzt für macOS mit Local Whisper Voice-to-Text, Bring-Your-Own-Provider-Sprachtranskription, konfigurierbaren Verknüpfungen, einer sprachreaktiven Kugel, Zustellung in der Zwischenablage und optionalem Verlauf verfügbar.

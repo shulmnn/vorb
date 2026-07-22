@@ -1,20 +1,21 @@
-Vorb verandert uw stem in tekst met één sneltoets.
+Vorb is een native dicteerapp voor Mac die spraak en stem omzet in tekst. Druk op één sneltoets, spreek op natuurlijke wijze en zet uw steminvoer om in heldere tekst, waar u ook schrijft.
 
-Druk op Option–Space om te starten en stoppen, of kies voor spreektijd. Vorb transcribeert uw opname en kopieert het resultaat naar het klembord.
+Spraakinvoer, zonder typen
+Druk op Option–Space om te starten en stoppen, of kies voor push-to-talk en houd de sneltoets ingedrukt terwijl u spreekt. Vorb transcribeert uw opname, kopieert het resultaat naar het klembord en houdt uw schrijfstroom in beweging in notities, berichten, documenten, e-mail en andere Mac-apps.
 
-PRIVÉ · LOKAAL GEfluister
-Transcribeer uw stem volledig in tekst op uw Mac zonder API-toets. Modellen worden alleen gedownload als u op Model downloaden klikt. U kunt ook een bestaand WhisperKit-model importeren.
+Privé op apparaat Whisper
+Voer spraakherkenning volledig uit op uw Mac met Local Whisper: geen API key vereist. Whisper-modellen kunnen alleen worden gedownload als u op Model downloaden klikt. In plaats daarvan kunt u een bestaand WhisperKit-model importeren. Lokale transcriptie houdt uw audio op het apparaat.
 
-Neem uw eigen leverancier mee
-Maak verbinding met Groq, OpenAI, Deepgram, Mistral, ElevenLabs, een zelfgehoste server of een ander compatibel eindpunt. De sleutels blijven in macOS Keychain staan ​​en de audio gaat rechtstreeks naar de provider die u selecteert.
+Breng uw eigen STT-provider mee
+Verbind Groq, OpenAI, Deepgram, Mistral, ElevenLabs, een zelf-hostende Whisper-server of een ander compatibel spraak-naar-tekst-eindpunt. Je API key's blijven in macOS Keychain en audio gaat rechtstreeks naar de provider die je selecteert.
 
-GEBOUWD VOOR GECONCENTREERD WERK
+Snel Mac-dictaat
 • Configureerbare globale snelkoppeling
-• Schakelen om in te spreken of in de wacht te zetten
-• Minimale opnamebol
-• Klembordlevering
+• Schakelen om te spreken of push-to-talken
+• Stem-reactieve opname-orb
+• Automatische klembordlevering
 • Optional lokale transcriptgeschiedenis
 • Automatische taaldetectie
-• Geen Vorb account, analyses, advertenties of abonnement
+• Geen Vorb-account, analyses, advertenties of abonnement
 
-Voor Local Whisper is Apple-silicium vereist. Voor onlineaanbieders en modeldownloads is een netwerkverbinding vereist.
+Dankzij de Vorb voelen spraakgestuurd typen, STT-transcriptie en Whisper-dicteren aan als eigen aan de macOS. Voor Local Whisper is Apple-silicium vereist. Voor onlineaanbieders en modeldownloads is een netwerkverbinding vereist.

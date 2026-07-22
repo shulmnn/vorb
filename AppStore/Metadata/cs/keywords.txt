@@ -1,1 +1,1 @@
-diktování,řeč,text,hlas,šepot,offline,schránka,poznámky,psaní,zvuk
+řeč na text,hlas na text,diktát,přepis,hlasový vstup,Whisper,STT,push to talk,offline

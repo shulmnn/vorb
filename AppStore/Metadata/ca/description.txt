@@ -1,20 +1,21 @@
-Vorb converteix la teva veu en text amb una drecera de teclat.
+Vorb és una aplicació de dictat nativa per a Mac que converteix la veu i la veu en text. Premeu una drecera del teclat, parla amb naturalitat i converteix la teva entrada de veu en text net allà on escriguis.
 
-Premeu Option–Space per iniciar i aturar-lo, o trieu Mantenir premut per parlar. Vorb transcriu la teva gravació i copia el resultat al porta-retalls.
+Entrada de veu, sense escriure
+Premeu Option–Space per iniciar i aturar-lo, o trieu premer per parlar i manteniu premuda la drecera mentre parleu. Vorb transcriu la vostra gravació, copia el resultat al porta-retalls i manté el vostre flux d'escriptura en moviment en notes, missatges, documents, correu electrònic i qualsevol altra aplicació Mac.
 
-PRIVAT · XUIXIU LOCAL
-Transcriu la teva veu a text completament al teu Mac sense cap tecla API. Els models només es descarreguen quan feu clic a Descarrega el model. També podeu importar un model WhisperKit existent.
+Privat al dispositiu Whisper
+Executeu el reconeixement de veu completament al vostre Mac amb Local Whisper; no cal API key. Els models Whisper només es descarreguen quan feu clic a Descarrega el model, i podeu importar un model WhisperKit existent. La transcripció local manté el vostre àudio al dispositiu.
 
-PORTA EL TEU PROPI PROVEÏDOR
-Connecteu Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un servidor autoallotjat o un altre punt final compatible. Les claus es mantenen a macOS Keychain i l'àudio va directament al proveïdor que seleccioneu.
+Porta el teu propi proveïdor STT
+Connecteu Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un servidor Whisper autoallotjat o un altre punt final de veu a text compatible. Els vostres API key es queden a macOS Keychain i l'àudio va directament al proveïdor que seleccioneu.
 
-CONSTRUït PER AL TREBALL CENTRAT
+Dictat ràpid Mac
 • Drecera global configurable
-• Canviar per parlar o mantenir premut per parlar
-• Orbe d'enregistrament mínim
-• Lliurament de porta-retalls
+• Canviar per parlar o prémer per parlar
+• Orbe d'enregistrament reactiu per veu
+• Lliurament automàtic de porta-retalls
 • Optional historial de transcripció local
 • Detecció automàtica de l'idioma
-• Sense compte Vorb, analítiques, publicitat o subscripció
+• Sense compte, analítiques, publicitat o subscripció Vorb
 
-Local Whisper requereix silicona d'Apple. Els proveïdors en línia i les descàrregues de models requereixen una connexió de xarxa.
+Vorb fa que l'escriptura de veu, la transcripció STT i el dictat Whisper se sentin natius de macOS. Local Whisper requereix silici d'Apple. Els proveïdors en línia i les descàrregues de models requereixen una connexió de xarxa.

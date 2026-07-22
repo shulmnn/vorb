@@ -1,1 +1,1 @@
-Vorb artık yerel Whisper, kendi sağlayıcınızı getirin transkripsiyonu, yapılandırılabilir kısayollar, pano dağıtımı ve isteğe bağlı geçmiş ile macOS için kullanılabilir.
+Vorb artık Local Whisper sesi metne dönüştürme, kendi sağlayıcınızı getirin konuşma transkripsiyonunu, yapılandırılabilir kısayolları, sesle tepki veren küreyi, pano teslimini ve isteğe bağlı geçmişi içeren macOS için mevcuttur.

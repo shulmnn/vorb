@@ -1,20 +1,21 @@
-Vorb trasforma la tua voce in testo con una scorciatoia da tastiera.
+Vorb è un'app di dettatura nativa per Mac che trasforma il parlato e la voce in testo. Premi una scorciatoia da tastiera, parla in modo naturale e trasforma i tuoi input vocali in testo pulito ovunque scrivi.
 
-Premi Option–Space per avviare e interrompere oppure scegli Trattieni per parlare. Vorb trascrive la tua registrazione e copia il risultato negli appunti.
+Input vocale, senza digitazione
+Premi Option–Space per avviare e interrompere oppure scegli premi per parlare e tieni premuta la scorciatoia mentre parli. Vorb trascrive la tua registrazione, copia il risultato negli appunti e mantiene in movimento il flusso di scrittura in note, messaggi, documenti, e-mail e qualsiasi altra app Mac.
 
-PRIVATO · SUSSURO LOCALE
-Trascrivi la tua voce in testo interamente sul tuo Mac senza il tasto API. I modelli vengono scaricati solo quando si fa clic su Scarica modello. Puoi anche importare un modello WhisperKit esistente.
+Privato sul dispositivo Whisper
+Esegui il riconoscimento vocale interamente sul tuo Mac con Local Whisper: non è necessario API key. I modelli Whisper vengono scaricati solo quando si fa clic su Scarica modello ed è possibile invece importare un modello WhisperKit esistente. La trascrizione locale mantiene l'audio sul dispositivo.
 
-PORTA IL TUO FORNITORE
-Connetti Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un server self-hosted o un altro endpoint compatibile. Le chiavi rimangono in macOS Keychain e l'audio va direttamente al provider selezionato.
+Porta il tuo fornitore STT
+Connetti Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un server Whisper self-hosted o un altro endpoint di sintesi vocale compatibile. I tuoi API key rimangono in macOS Keychain e l'audio va direttamente al provider selezionato.
 
-COSTRUITO PER IL LAVORO CONCENTRATO
+Dettatura veloce Mac
 • Scorciatoia globale configurabile
-• Attiva/disattiva per parlare o tieni premuto per parlare
-• Sfera di registrazione minima
-• Consegna degli appunti
-• Optional storia della trascrizione locale
+• Attiva/disattiva per parlare o premi per parlare
+• Sfera di registrazione con reattività vocale
+• Consegna automatica degli appunti
+• Cronologia della trascrizione locale Optional
 • Rilevamento automatico della lingua
 • Nessun account Vorb, analisi, pubblicità o abbonamento
 
-Local Whisper richiede silicio Apple. I provider online e i download di modelli richiedono una connessione di rete.
+Vorb rende la digitazione vocale, la trascrizione STT e la dettatura Whisper native di macOS. Local Whisper richiede silicio Apple. I provider online e i download di modelli richiedono una connessione di rete.

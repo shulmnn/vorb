@@ -1,1 +1,1 @@
-Vorb on nyt saatavilla numerolle macOS paikallisella numerolla Whisper, tuo oma palveluntarjoajasi transkriptio, määritettävissä olevat pikakuvakkeet, leikepöydän toimitus ja valinnainen historia.
+Vorb on nyt saatavana mallille macOS, jossa on Local Whisper-ääni-teksti, tuo oman palveluntarjoajasi puheen transkriptio, määritettävät pikakuvakkeet, äänireaktiivinen pallo, leikepöydän toimitus ja valinnainen historia.

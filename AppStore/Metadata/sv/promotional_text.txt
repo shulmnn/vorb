@@ -1,1 +1,1 @@
-Tryck på Option–Space, tala och kopiera utskriften. Kör Whisper lokalt utan nyckel, eller ta med din egen leverantör – gratis, privat och utan abonnemang.
+Förvandla röst till text var som helst på din Mac. Använd en genväg för snabb diktering, kör Whisper privat på enheten eller ta med din egen STT-leverantör och API key.

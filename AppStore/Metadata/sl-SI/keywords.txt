@@ -1,0 +1,1 @@
+govor v besedilo,glas v besedilo,diktat,prepisovanje,glasovni vnos,Whisper,STT,Pritisni in govori

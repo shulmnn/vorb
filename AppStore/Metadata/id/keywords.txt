@@ -1,1 +1,1 @@
-dikte,ucapan,teks,suara,bisikan,offline,papan klip,catatan,pengetikan,audio
+ucapan ke teks,suara ke teks,dikte,transkripsi,masukan suara,Whisper,STT,dorong untuk berbicara

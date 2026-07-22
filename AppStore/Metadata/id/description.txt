@@ -1,20 +1,21 @@
-Vorb mengubah suara Anda menjadi teks dengan satu pintasan keyboard.
+Vorb adalah aplikasi dikte asli untuk Mac yang mengubah ucapan dan suara menjadi teks. Tekan satu pintasan keyboard, bicaralah secara alami, dan ubah masukan suara Anda menjadi teks bersih di mana pun Anda menulis.
 
-Tekan Option–Space untuk memulai dan berhenti, atau pilih tahan untuk berbicara. Vorb mentranskripsikan rekaman Anda dan menyalin hasilnya ke clipboard.
+Input Suara, Tanpa Mengetik
+Tekan Option–Space untuk memulai dan berhenti, atau pilih push-to-talk dan tahan pintasan sambil berbicara. Vorb mentranskripsikan rekaman Anda, menyalin hasilnya ke clipboard, dan membuat alur penulisan Anda tetap bergerak di catatan, pesan, dokumen, email, dan aplikasi Mac lainnya.
 
-PRIBADI · BERBISIK LOKAL
-Transkripsikan suara Anda menjadi teks seluruhnya di Mac tanpa tombol API. Model diunduh hanya ketika Anda mengklik Unduh Model. Anda juga dapat mengimpor model WhisperKit yang sudah ada.
+Whisper Pribadi di Perangkat
+Jalankan pengenalan ucapan sepenuhnya di Mac dengan Local Whisper—tidak diperlukan API key. Model Whisper diunduh hanya ketika Anda mengklik Unduh Model, dan Anda dapat mengimpor model WhisperKit yang sudah ada. Transkripsi lokal menyimpan audio Anda di perangkat.
 
-MEMBAWA PENYEDIA ANDA SENDIRI
-Hubungkan Groq, OpenAI, Deepgram, Mistral, ElevenLabs, server yang dihosting sendiri, atau titik akhir lain yang kompatibel. Kunci tetap berada di macOS Keychain, dan audio langsung masuk ke penyedia yang Anda pilih.
+Bawa Penyedia STT Anda Sendiri
+Hubungkan Groq, OpenAI, Deepgram, Mistral, ElevenLabs, server Whisper yang dihosting sendiri, atau titik akhir ucapan-ke-teks lain yang kompatibel. API key Anda tetap di macOS Keychain, dan audio langsung masuk ke penyedia yang Anda pilih.
 
-DIBANGUN UNTUK PEKERJAAN YANG FOKUS
+Dikte Mac Cepat
 • Pintasan global yang dapat dikonfigurasi
-• Alihkan untuk berbicara atau tahan untuk berbicara
-• Bola rekaman minimal
-• Pengiriman papan klip
-• Optional riwayat transkrip lokal
+• Beralih untuk berbicara atau menekan untuk berbicara
+• Bola perekam suara-reaktif
+• Pengiriman clipboard otomatis
+• Riwayat transkrip lokal Optional
 • Deteksi bahasa otomatis
 • Tidak ada akun Vorb, analitik, iklan, atau berlangganan
 
-Local Whisper memerlukan silikon Apple. Penyedia online dan pengunduhan model memerlukan koneksi jaringan.
+Vorb menjadikan pengetikan suara, transkripsi STT, dan dikte Whisper terasa asli macOS. Local Whisper memerlukan silikon Apple. Penyedia online dan pengunduhan model memerlukan koneksi jaringan.

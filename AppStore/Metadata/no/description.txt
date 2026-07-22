@@ -1,20 +1,21 @@
-Vorb gjør stemmen din til tekst med én hurtigtast.
+Vorb er en innebygd dikteringsapp for Mac som gjør tale og stemme om til tekst. Trykk på én hurtigtast, snakk naturlig, og gjør stemmeinndataene dine til ren tekst uansett hvor du skriver.
 
-Trykk Option–Space for å starte og stoppe, eller velg hold for å snakke. Vorb transkriberer opptaket ditt og kopierer resultatet til utklippstavlen.
+Stemmeinndata, uten å skrive
+Trykk Option–Space for å starte og stoppe, eller velg trykk-og-snakk og hold snarveien mens du snakker. Vorb transkriberer opptaket ditt, kopierer resultatet til utklippstavlen og holder skriveflyten din i bevegelse i notater, meldinger, dokumenter, e-post og enhver annen Mac-app.
 
-PRIVAT · LOKAL HVISKE
-Transkriber stemmen din til tekst helt på Mac uten API-tast. Modeller lastes bare ned når du klikker på Last ned modell. Du kan også importere en eksisterende WhisperKit-modell.
+Privat på enheten Whisper
+Kjør talegjenkjenning helt på din Mac med Local Whisper—ingen API key nødvendig. Whisper-modeller lastes bare ned når du klikker Last ned modell, og du kan importere en eksisterende WhisperKit-modell i stedet. Lokal transkripsjon holder lyden din på enheten.
 
-TA MED EGEN LEVERANDØR
-Koble til Groq, OpenAI, Deepgram, Mistral, ElevenLabs, en selvdrevet server eller et annet kompatibelt endepunkt. Nøklene forblir i macOS Keychain, og lyden går direkte til leverandøren du velger.
+Ta med din egen STT-leverandør
+Koble til Groq, OpenAI, Deepgram, Mistral, ElevenLabs, en selvvertsbasert Whisper-server eller et annet kompatibelt tale-til-tekst-endepunkt. Dine API key-er blir i macOS Keychain, og lyden går direkte til leverandøren du velger.
 
-BYGGET FOR FOKUSERT ARBEID
+Rask Mac diktering
 • Konfigurerbar global snarvei
-• Veksle for å snakke eller hold for å snakke
-• Minimal innspilling orb
-• Levering av utklippstavle
+• Veksle for å snakke eller trykk for å snakke
+• Stemmereaktivt opptak orb
+• Automatisk utklippstavlelevering
 • Optional lokal transkripsjonshistorikk
 • Automatisk språkdeteksjon
-• Ingen Vorb konto, analyser, annonsering eller abonnement
+• Ingen Vorb-konto, analyser, annonsering eller abonnement
 
-Local Whisper krever Apple silisium. Nettleverandører og modellnedlastinger krever en nettverkstilkobling.
+Vorb gjør at stemmeskriving, STT-transkripsjon og Whisper-diktering føles hjemmehørende i macOS. Local Whisper krever Apple silisium. Nettleverandører og modellnedlastinger krever en nettverkstilkobling.

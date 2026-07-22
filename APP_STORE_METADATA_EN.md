@@ -1,18 +1,18 @@
 # Vorb — App Store metadata (English, U.S.)
 
-Submission copy for Vorb 1.0.0. Contact-name and phone fields must still be completed by the App Store account holder before submission.
+Submission copy for Vorb 1.0. The App Review phone field must still be completed by the App Store account holder before submission.
 
 ## App record
 
 | Field | Value |
 | --- | --- |
 | Platform | macOS |
-| App name | Vorb |
+| App name | Vorb: Whisper Voice to Text |
 | Primary language | English (U.S.) |
-| Bundle ID | `com.amnios.vorb` |
+| Bundle ID | `vorb.shulmnn.com` |
 | SKU | `VORB-MAC-001` |
-| Version | `1.0.0` |
-| Build | `1` |
+| Version | `1.0` |
+| Build | `2` |
 | Copyright | 2026 Amnios Group |
 | Primary category | Productivity |
 | Secondary category | Utilities |
@@ -24,61 +24,57 @@ Submission copy for Vorb 1.0.0. Contact-name and phone fields must still be comp
 
 ## English (U.S.) product page
 
-### Name — 4/30 characters
+### Name — 27/30 characters
 
 ```text
-Vorb
+Vorb: Whisper Voice to Text
 ```
 
-### Subtitle — 25/30 characters
+### Subtitle — 21/30 characters
 
 ```text
-Private Whisper Dictation
+Whisper Voice to Text
 ```
 
-### Promotional text — 164/170 characters
+### Promotional text — 156/170 characters
 
 ```text
-Press Option–Space, speak, and get clean text in your clipboard. Run Whisper locally with no key, or bring your own provider—without a Vorb account or subscription.
+Turn voice into text anywhere on your Mac. Use one shortcut for fast dictation, run Whisper privately on-device, or bring your own STT provider and API key.
 ```
 
-### Keywords — 95/100 bytes
+### Keywords — 97/100 bytes
 
 ```text
-transcription,speech to text,voice,clipboard,productivity,offline,local,BYOK,audio,typing,notes
+speech to text,voice to text,dictation,transcription,voice input,Whisper,STT,push to talk,offline
 ```
 
 ### Description
 
 ```text
-Vorb turns your voice into text with a single shortcut.
+Vorb is a native dictation app for Mac that turns speech and voice into text. Press one keyboard shortcut, speak naturally, and turn your voice input into clean text wherever you write.
 
-Press Option–Space to start speaking and press it again to stop, or choose hold-to-speak and release the shortcut when you are done. You can record a different global shortcut at any time. Vorb transcribes your audio, copies the result to the clipboard, and gets out of your way.
+VOICE INPUT, WITHOUT THE TYPING
+Press Option–Space to start and stop, or choose push-to-talk and hold the shortcut while speaking. Vorb transcribes your recording, copies the result to the clipboard, and keeps your writing flow moving in notes, messages, documents, email, and any other Mac app.
 
-RUN WHISPER ON YOUR MAC
+PRIVATE ON-DEVICE WHISPER
 
-Choose Local Whisper to transcribe entirely on your Mac—no API key required. Models download only when you click Download Model. If you already have a complete WhisperKit model, import its folder instead.
+Run speech recognition entirely on your Mac with Local Whisper—no API key required. Whisper models download only when you click Download Model, and you can import an existing WhisperKit model instead. Local transcription keeps your audio on-device.
 
-BRING YOUR OWN PROVIDER
+BRING YOUR OWN STT PROVIDER
 
-Already have an API key? Connect Groq, OpenAI, Deepgram, Mistral, ElevenLabs, or another compatible service. Keys stay in macOS Keychain, and Vorb sends audio directly to the provider you select. There is no Vorb account, backend, analytics, advertising, or subscription.
+Connect Groq, OpenAI, Deepgram, Mistral, ElevenLabs, a self-hosted Whisper server, or another compatible speech-to-text endpoint. Your API keys stay in macOS Keychain, and audio goes directly to the provider you select.
 
-MADE FOR FOCUSED WORK
+FAST MAC DICTATION
 
 • Configurable global shortcut
-• Toggle-to-speak or hold-to-speak
-• Minimal animated recording orb
-• Clipboard delivery in the Mac App Store version
-• Optional, locally stored transcript history
-• Automatic language detection or a chosen language
-• Tiny, Base, Small, and Large V3 local Whisper models
-• Hosted, self-hosted, and custom OpenAI-compatible endpoints
-• Menu bar icon you can hide
-• Settings that save automatically
+• Toggle-to-speak or push-to-talk
+• Voice-reactive recording orb
+• Automatic clipboard delivery
+• Optional local transcript history
+• Automatic language detection
+• No Vorb account, analytics, advertising, or subscription
 
-Vorb removes temporary recordings after each transcription attempt. When Local Whisper is selected, transcription stays on your Mac. When you choose an online provider, its terms and privacy policy apply.
-
-Requires macOS 14 or later and a Mac with Apple silicon. A network connection is required to download a local model or use an online provider.
+Vorb makes voice typing, STT transcription, and Whisper dictation feel native to macOS. Local Whisper requires Apple silicon. Online providers and model downloads require a network connection.
 ```
 
 ### URLs
@@ -186,30 +182,21 @@ No attachment is required. If the model host cannot be reached from App Review�
 
 ## App Privacy
 
-### Recommended App Store Connect answers
+### Published App Store Connect answers
 
 | Question | Answer |
 | --- | --- |
-| Does this app collect data? | No |
+| Does this app collect data? | Yes, for optional hosted transcription only |
+| Data type | Audio Data |
+| Purpose | App Functionality |
+| Linked to identity | Yes, because the user’s provider API key may associate the request with their provider account |
 | Tracking | No |
 | Uses data for third-party advertising | No |
 | Uses data for developer advertising or marketing | No |
 
-Rationale: Vorb has no Amnios Group backend, analytics, advertising SDK, telemetry, or developer account system. Local Whisper stays on-device. In hosted mode, the user deliberately sends audio directly to a provider they selected and separately authorized; Vorb includes no provider SDK, and Amnios Group cannot access the audio, transcript, key, or provider account. Apple defines collection as off-device data retained beyond real-time servicing by the developer or a third-party partner, and defines third-party partners around external code included in the app. The public privacy policy must still explain hosted-provider processing clearly.
+Rationale: Local Whisper stays on-device. In hosted mode, the user deliberately sends audio directly to a provider they selected and separately authorized. The conservative disclosure accounts for providers that may retain audio beyond real-time servicing and associate it with the user’s provider account. Vorb has no Amnios Group backend, analytics, advertising SDK, telemetry, or developer account system, and Amnios Group cannot access the audio, transcript, key, or provider account.
 
-Revisit this answer before every release. If Amnios Group adds analytics, a backend, crash reporting that transmits data, a provider SDK, or a commercial provider relationship that gives Amnios Group access to requests, disclose every affected data type. If App Review determines the built-in direct API integrations are third-party partners, use the conservative fallback below.
-
-### Conservative fallback if App Review requests provider disclosure
-
-Declare these data types only for optional hosted transcription:
-
-| Data type | Purpose | Linked to identity | Tracking |
-| --- | --- | --- | --- |
-| Audio Data | App Functionality | Yes, because a provider API key may associate a request with the user’s provider account | No |
-| Other User Content (transcript) | App Functionality | Yes, because the selected provider may associate the result with the user’s provider account | No |
-| User ID | App Functionality | Yes; the provider credential identifies the provider account | No |
-
-Do not use the fallback merely to describe Local Whisper; local transcription is not collected.
+Revisit this answer before every release. If Amnios Group adds analytics, a backend, crash reporting that transmits data, a provider SDK, or access to hosted-provider requests, disclose every affected data type. Do not use the Audio Data disclosure to describe Local Whisper; local transcription is not collected.
 
 ## Age rating questionnaire
 

@@ -22,6 +22,7 @@ final class AudioRecorder: NSObject, AVAudioRecorderDelegate {
     private var recorder: AVAudioRecorder?
     private var levelTimer: Timer?
     private var recordingURL: URL?
+    private var levelEnvelope = VoiceLevelEnvelope()
 
     func start() async throws {
         guard await requestMicrophoneAccess() else {
@@ -68,6 +69,7 @@ final class AudioRecorder: NSObject, AVAudioRecorderDelegate {
         recorder?.stop()
         recorder = nil
         recordingURL = nil
+        levelEnvelope.reset()
         onLevel?(0)
         return url
     }
@@ -79,6 +81,7 @@ final class AudioRecorder: NSObject, AVAudioRecorderDelegate {
         recorder?.stop()
         recorder = nil
         recordingURL = nil
+        levelEnvelope.reset()
         onLevel?(0)
 
         if let url {
@@ -90,10 +93,11 @@ final class AudioRecorder: NSObject, AVAudioRecorderDelegate {
         guard let recorder, recorder.isRecording else { return }
         recorder.updateMeters()
 
-        // Convert the useful voice range (-48...0 dB) to 0...1, then soften it.
-        let decibels = Double(recorder.averagePower(forChannel: 0))
-        let normalized = max(0, min(1, (decibels + 48) / 48))
-        onLevel?(pow(normalized, 1.6))
+        let level = levelEnvelope.update(
+            averagePower: recorder.averagePower(forChannel: 0),
+            peakPower: recorder.peakPower(forChannel: 0)
+        )
+        onLevel?(level)
     }
 
     private func requestMicrophoneAccess() async -> Bool {

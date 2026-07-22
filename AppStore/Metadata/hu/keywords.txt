@@ -1,1 +1,1 @@
-diktálás,beszéd,szöveg,hang,suttogás,offline,vágólap,jegyzetek,gépelés,hang
+beszéd szöveggé,hangból szöveget,diktálás,átírása,hangbemenet,Whisper,STT,push to talk

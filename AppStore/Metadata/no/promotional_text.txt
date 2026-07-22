@@ -1,1 +1,1 @@
-Trykk Option–Space, snakk og kopier transkripsjonen. Kjør Whisper lokalt uten nøkkel, eller ta med din egen leverandør – gratis, privat og abonnementsfritt.
+Gjør stemme til tekst hvor som helst på din Mac. Bruk én snarvei for rask diktering, kjør Whisper privat på enheten, eller ta med din egen STT-leverandør og API key.

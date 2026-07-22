@@ -1,20 +1,21 @@
-Vorb biến giọng nói của bạn thành văn bản bằng một phím tắt.
+Vorb là một ứng dụng đọc chính tả gốc dành cho Mac, biến lời nói và giọng nói thành văn bản. Nhấn một phím tắt, nói chuyện tự nhiên và chuyển giọng nói của bạn thành văn bản rõ ràng ở bất cứ nơi nào bạn viết.
 
-Nhấn Option–Space để bắt đầu và dừng hoặc chọn giữ để nói. Vorb chép lại bản ghi của bạn và sao chép kết quả vào bảng nhớ tạm.
+Nhập bằng giọng nói mà không cần gõ
+Nhấn Option–Space để bắt đầu và dừng hoặc chọn nhấn để nói và giữ phím tắt trong khi nói. Vorb chép lại bản ghi của bạn, sao chép kết quả vào khay nhớ tạm và giữ cho luồng văn bản của bạn chuyển động trong ghi chú, tin nhắn, tài liệu, email và bất kỳ ứng dụng Mac nào khác.
 
-RIÊNG TƯ · THỜI GIAN ĐỊA PHƯƠNG
-Chuyển giọng nói của bạn thành văn bản hoàn toàn trên Mac mà không cần phím API. Mô hình chỉ tải xuống khi bạn nhấp vào Tải xuống mô hình. Bạn cũng có thể nhập mô hình WhisperKit hiện có.
+Riêng tư trên thiết bị Whisper
+Chạy nhận dạng giọng nói hoàn toàn trên Mac của bạn với Local Whisper—không cần API key. Các mô hình Whisper chỉ tải xuống khi bạn nhấp vào Tải xuống mô hình và thay vào đó, bạn có thể nhập mô hình WhisperKit hiện có. Phiên âm cục bộ sẽ giữ âm thanh của bạn trên thiết bị.
 
-MANG THEO NHÀ CUNG CẤP CỦA RIÊNG BẠN
-Kết nối Groq, OpenAI, Deepgram, Mistral, ElevenLabs, máy chủ tự lưu trữ hoặc điểm cuối tương thích khác. Các phím vẫn ở macOS Keychain và âm thanh sẽ được chuyển trực tiếp đến nhà cung cấp mà bạn chọn.
+Mang theo nhà cung cấp STT của riêng bạn
+Kết nối Groq, OpenAI, Deepgram, Mistral, ElevenLabs, máy chủ Whisper tự lưu trữ hoặc điểm cuối chuyển giọng nói thành văn bản tương thích khác. API key của bạn vẫn ở trong macOS Keychain và âm thanh sẽ được chuyển trực tiếp đến nhà cung cấp mà bạn chọn.
 
-ĐƯỢC XÂY DỰNG CHO CÔNG VIỆC TẬP TRUNG
+Đọc chính tả Mac nhanh
 • Phím tắt chung có thể định cấu hình
-• Chuyển đổi để nói hoặc giữ để nói
-• Quả cầu ghi âm tối thiểu
-• Phân phối bảng nhớ tạm
-• Optional lịch sử bảng điểm cục bộ
+• Chuyển đổi để nói hoặc nhấn để nói
+• Quả cầu ghi âm phản ứng bằng giọng nói
+• Tự động phân phối clipboard
+• Lịch sử bảng điểm cục bộ Optional
 • Tự động phát hiện ngôn ngữ
-• Không có tài khoản Vorb, phân tích, quảng cáo hoặc đăng ký
+• Không có tài khoản, phân tích, quảng cáo hoặc đăng ký Vorb
 
-Local Whisper yêu cầu silicon của Apple. Các nhà cung cấp trực tuyến và tải xuống mô hình yêu cầu kết nối mạng.
+Vorb giúp cho việc nhập liệu bằng giọng nói, phiên âm STT và đọc chính tả Whisper giống như macOS. Local Whisper yêu cầu silicon của Apple. Các nhà cung cấp trực tuyến và tải xuống mô hình yêu cầu kết nối mạng.

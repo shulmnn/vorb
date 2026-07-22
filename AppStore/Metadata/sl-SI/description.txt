@@ -1,0 +1,21 @@
+Vorb je izvorna aplikacija za narekovanje za Mac, ki pretvori govor in glas v besedilo. Pritisnite eno bližnjico na tipkovnici, govorite naravno in svoj glasovni vnos spremenite v čisto besedilo, kjer koli pišete.
+
+Glasovni vnos, brez tipkanja
+Pritisnite Option–Space za začetek in konec ali pa izberite Pritisni in govori in med govorjenjem držite bližnjico. Vorb prepiše vaš posnetek, kopira rezultat v odložišče in poskrbi, da se vaš tok pisanja premika v zapiskih, sporočilih, dokumentih, e-pošti in kateri koli drugi aplikaciji Mac.
+
+Zasebno v napravi Whisper
+Zaženite prepoznavanje govora v celoti na svojem Mac z Local Whisper – API key ni potreben. Modeli Whisper se prenesejo samo, ko kliknete Prenesi model, namesto tega pa lahko uvozite obstoječi model WhisperKit. Lokalni prepis ohranja vaš zvok v napravi.
+
+Pripeljite svojega ponudnika STT
+Povežite Groq, OpenAI, Deepgram, Mistral, ElevenLabs, samogostiteljski strežnik Whisper ali drugo združljivo končno točko govora v besedilo. Vaši API key ostanejo v macOS Keychain, zvok pa gre neposredno ponudniku, ki ga izberete.
+
+Hitro narekovanje Mac
+• Nastavljiva globalna bližnjica
+• Preklopi in govori ali Pritisni in govori
+• Glasovno odzivna snemalna krogla
+• Samodejna dostava odložišča
+• Zgodovina lokalnega prepisa Optional
+• Samodejno zaznavanje jezika
+• Brez računa Vorb, analitike, oglaševanja ali naročnine
+
+Vorb poskrbi, da so glasovno tipkanje, prepis STT in narekovanje Whisper izvirni iz macOS. Local Whisper potrebuje Apple silicon. Spletni ponudniki in prenosi modelov zahtevajo omrežno povezavo.

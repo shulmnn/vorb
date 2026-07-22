@@ -1,1 +1,1 @@
-diktering,tale,tekst,stemme,hvisking,frakoblet,utklippstavle,notater,skriving,lyd
+tale til tekst,stemme til tekst,diktat,transkripsjon,stemmeinngang,Whisper,STT,trykk for å snakke

@@ -1,20 +1,21 @@
-Vorb zamienia Twój głos na tekst za pomocą jednego skrótu klawiaturowego.
+Vorb to natywna aplikacja do dyktowania dla Mac, która zamienia mowę i głos na tekst. Naciśnij jeden skrót klawiaturowy, mów naturalnie i zamień wprowadzane głosy na czysty tekst, gdziekolwiek piszesz.
 
-Naciśnij Option–Space, aby rozpocząć i zatrzymać, lub wybierz opcję Przytrzymaj, aby mówić. Vorb dokonuje transkrypcji Twojego nagrania i kopiuje wynik do schowka.
+Wprowadzanie głosowe, bez pisania
+Naciśnij Option–Space, aby rozpocząć i zatrzymać, lub wybierz opcję „Naciśnij i mów” i przytrzymaj skrót podczas mówienia. Vorb transkrybuje Twoje nagranie, kopiuje wynik do schowka i zapewnia płynność pisania w notatkach, wiadomościach, dokumentach, e-mailach i dowolnej innej aplikacji Mac.
 
-PRYWATNE · LOKALNY SZept
-Transkrypcja całego głosu na tekst na urządzeniu Mac bez klawisza API. Modele są pobierane tylko po kliknięciu przycisku Pobierz model. Możesz także zaimportować istniejący model WhisperKit.
+Prywatne urządzenie Whisper
+Uruchom rozpoznawanie mowy w całości na swoim Mac za pomocą Local Whisper — API key nie jest wymagany. Modele Whisper można pobrać tylko po kliknięciu przycisku Pobierz model. Zamiast tego można zaimportować istniejący model WhisperKit. Lokalna transkrypcja pozwala zachować dźwięk na urządzeniu.
 
-ZABIERZ SWOJEGO DOSTAWCĘ
-Połącz Groq, OpenAI, Deepgram, Mistral, ElevenLabs, serwer hostowany samodzielnie lub inny kompatybilny punkt końcowy. Klucze pozostają w macOS Keychain, a dźwięk jest przesyłany bezpośrednio do wybranego dostawcy.
+Przynieś własnego dostawcę STT
+Połącz Groq, OpenAI, Deepgram, Mistral, ElevenLabs, własny serwer Whisper lub inny kompatybilny punkt końcowy zamiany mowy na tekst. Twoje API key pozostają w macOS Keychain, a dźwięk jest przesyłany bezpośrednio do wybranego dostawcy.
 
-STWORZONY DO SKUPIONEJ PRACY
+Szybkie dyktowanie Mac
 • Konfigurowalny skrót globalny
-• Przełącz, aby mówić lub przytrzymaj, aby mówić
-• Minimalna kula nagrywająca
-• Dostawa schowka
-• Optional lokalna historia transkrypcji
+• Przełącz, aby mówić lub naciśnij i mów
+• Kula nagrywająca reagująca na głos
+• Automatyczne dostarczanie schowka
+• Lokalna historia transkrypcji Optional
 • Automatyczne wykrywanie języka
 • Brak konta Vorb, analiz, reklam i subskrypcji
 
-Local Whisper wymaga krzemu Apple. Dostawcy online i pobieranie modeli wymagają połączenia sieciowego.
+Vorb sprawia, że pisanie głosowe, transkrypcja STT i dyktowanie Whisper są natywne dla macOS. Local Whisper wymaga krzemu Apple. Dostawcy online i pobieranie modeli wymagają połączenia sieciowego.

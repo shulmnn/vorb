@@ -1,0 +1,87 @@
+default_platform(:mac)
+
+APP_IDENTIFIER = "vorb.shulmnn.com"
+APP_STORE_ID = "6793676551"
+APP_VERSION = "1.0"
+
+private_lane :vorb_api_key do
+  app_store_connect_api_key(
+    key_id: ENV.fetch("ASC_KEY_ID"),
+    issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+    key_filepath: ENV.fetch("ASC_KEY_PATH"),
+    in_house: false
+  )
+end
+
+platform :mac do
+  desc "Validate the signed Vorb package without uploading it"
+  lane :validate_package do
+    upload_to_app_store(
+      api_key: vorb_api_key,
+      app_identifier: APP_IDENTIFIER,
+      app_version: APP_VERSION,
+      pkg: File.expand_path("../dist/app-store/Vorb.pkg", __dir__),
+      platform: "osx",
+      skip_metadata: true,
+      skip_screenshots: true,
+      verify_only: true,
+      force: true,
+      submit_for_review: false,
+      automatic_release: false,
+      run_precheck_before_submit: false
+    )
+  end
+
+  desc "Upload the signed Vorb package without submitting it for review"
+  lane :upload_build do
+    upload_to_app_store(
+      api_key: vorb_api_key,
+      app_identifier: APP_IDENTIFIER,
+      app_version: APP_VERSION,
+      pkg: File.expand_path("../dist/app-store/Vorb.pkg", __dir__),
+      platform: "osx",
+      skip_metadata: true,
+      skip_screenshots: true,
+      force: true,
+      submit_for_review: false,
+      automatic_release: false,
+      run_precheck_before_submit: false
+    )
+  end
+
+  desc "Upload all localized metadata and the ten localized screenshot sets"
+  lane :upload_metadata do
+    upload_to_app_store(
+      api_key: vorb_api_key,
+      app_identifier: APP_IDENTIFIER,
+      app_version: APP_VERSION,
+      platform: "osx",
+      metadata_path: File.expand_path("../dist/app-store/upload-metadata-1-0", __dir__),
+      screenshots_path: File.expand_path("../dist/app-store/upload-screenshots-1-0", __dir__),
+      skip_binary_upload: true,
+      overwrite_screenshots: true,
+      force: true,
+      submit_for_review: false,
+      automatic_release: false,
+      run_precheck_before_submit: false
+    )
+  end
+
+  desc "Upload the ten localized Mac screenshot sets without changing metadata"
+  lane :upload_screenshots do
+    upload_to_app_store(
+      api_key: vorb_api_key,
+      app_identifier: APP_IDENTIFIER,
+      app_version: APP_VERSION,
+      platform: "osx",
+      screenshots_path: File.expand_path("../dist/app-store/upload-screenshots-1-0", __dir__),
+      skip_binary_upload: true,
+      skip_metadata: true,
+      overwrite_screenshots: true,
+      force: true,
+      submit_for_review: false,
+      automatic_release: false,
+      run_precheck_before_submit: false
+    )
+  end
+end

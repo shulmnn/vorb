@@ -1,0 +1,1 @@
+Vorb je zdaj na voljo za macOS s pretvorbo glasu v besedilo Local Whisper, prepisom govora svojega ponudnika, nastavljivimi bližnjicami, glasovno reaktivno kroglo, dostavo v odložišče in izbirno zgodovino.

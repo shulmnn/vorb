@@ -1,20 +1,21 @@
-Vorb pretvara vaš glas u tekst jednim prečacem na tipkovnici.
+Vorb je izvorna aplikacija za diktiranje za Mac koja govor i glas pretvara u tekst. Pritisnite jednu tipkovničku prečicu, govorite prirodno i pretvorite svoj glasovni unos u čisti tekst gdje god pišete.
 
-Pritisnite Option–Space za pokretanje i zaustavljanje ili odaberite držanje za govor. Vorb transkribira vašu snimku i kopira rezultat u međuspremnik.
+Glasovni unos, bez tipkanja
+Pritisnite Option–Space za pokretanje i zaustavljanje ili odaberite Pritisni za razgovor i držite prečicu dok govorite. Vorb transkribira vašu snimku, kopira rezultat u međuspremnik i održava tok vašeg pisanja u bilješkama, porukama, dokumentima, e-pošti i bilo kojoj drugoj Mac aplikaciji.
 
-PRIVATNO · LOKALNO ŠAPATANJE
-Prepišite svoj glas u tekst u potpunosti na svom Mac bez tipke API. Modeli se preuzimaju samo kada kliknete Preuzmi model. Također možete uvesti postojeći model WhisperKit.
+Privatno na uređaju Whisper
+Pokrenite prepoznavanje govora u potpunosti na svom Mac sa Local Whisper—nije potreban API key. Modeli Whisper preuzimaju se samo kada kliknete Preuzmi model, a umjesto toga možete uvesti postojeći model WhisperKit. Lokalna transkripcija čuva vaš zvuk na uređaju.
 
-POVEDITE VLASTITOG PONUĐAČA
-Povežite Groq, OpenAI, Deepgram, Mistral, ElevenLabs, poslužitelj koji se samostalno hostira ili drugu kompatibilnu krajnju točku. Ključevi ostaju u macOS Keychain, a zvuk ide izravno pružatelju kojeg odaberete.
+Donesite vlastitog STT dobavljača
+Povežite Groq, OpenAI, Deepgram, Mistral, ElevenLabs, Whisper poslužitelj s vlastitim hostingom ili drugu kompatibilnu krajnju točku govora u tekst. Vaši API key ostaju u macOS Keychain, a zvuk ide izravno pružatelju kojeg odaberete.
 
-IZRAĐEN ZA FOKUSIRANI RAD
+Brzi Mac diktat
 • Konfigurabilni globalni prečac
-• Prebaci za govor ili zadrži za govor
-• Minimalna kugla za snimanje
-• Isporuka međuspremnika
+• Prebaci za govor ili pritisni za razgovor
+• Glasovno-reaktivna kugla za snimanje
+• Automatska isporuka međuspremnika
 • Optional lokalna povijest prijepisa
 • Automatsko otkrivanje jezika
-• Bez računa Vorb, analitike, oglašavanja ili pretplate
+• Nema Vorb računa, analitike, oglašavanja ili pretplate
 
-Local Whisper zahtijeva Apple silikon. Mrežni pružatelji usluga i preuzimanja modela zahtijevaju mrežnu vezu.
+Vorb čini glasovno tipkanje, STT transkripciju i Whisper diktiranje izvornim za macOS. Local Whisper zahtijeva Apple silikon. Mrežni pružatelji usluga i preuzimanja modela zahtijevaju mrežnu vezu.

@@ -21,13 +21,27 @@ struct NativeOrb: View {
     private func drawOrb(in context: inout GraphicsContext, size: CGSize, time: CGFloat) {
         let side = min(size.width, size.height)
         let center = CGPoint(x: size.width / 2, y: size.height / 2)
-        let radius = side * 0.42
+        let radius = side * 0.35
         let particleCount = 104
-        let speed: CGFloat = phase == .transcribing ? 1.7 : 0.75
-        let level = CGFloat(max(0, min(1, audioLevel)))
-        let pulse = 1 + (phase == .recording ? level * 0.13 : sin(time * 2.2) * 0.025)
+        let level = phase == .recording
+            ? CGFloat(max(0, min(1, audioLevel)))
+            : 0
+        let speed: CGFloat
+        switch phase {
+        case .recording: speed = 0.8 + level * 2.2
+        case .transcribing: speed = 1.7
+        default: speed = 0.75
+        }
+        let pulse = phase == .recording
+            ? 1 + level * 0.24 + sin(time * 6.2) * level * 0.025
+            : 1 + sin(time * 2.2) * 0.025
 
-        context.addFilter(.shadow(color: .white.opacity(0.13), radius: 3))
+        context.addFilter(
+            .shadow(
+                color: .white.opacity(0.10 + Double(level) * 0.20),
+                radius: 2 + level * 4
+            )
+        )
 
         for index in 0..<particleCount {
             let indexValue = CGFloat(index)
@@ -39,8 +53,11 @@ struct NativeOrb: View {
             let wave: CGFloat
             switch phase {
             case .recording:
-                phaseOffset = time * speed + sin(indexValue * 0.31) * level * 0.6
-                wave = sin(time * 4.2 + indexValue * 0.23) * (0.035 + level * 0.09)
+                phaseOffset = time * speed + sin(indexValue * 0.31) * level * 0.95
+                wave =
+                    sin(time * (4.2 + level * 4.8) + indexValue * 0.23)
+                        * (0.035 + level * 0.11)
+                    + sin(time * 10.8 + indexValue * 0.91) * level * 0.035
             case .transcribing:
                 phaseOffset = time * speed + baseRadius * 5.2
                 wave = sin(time * 2.8 + indexValue * 0.41) * 0.08
@@ -63,8 +80,14 @@ struct NativeOrb: View {
 
             let edgeFade = 1 - baseRadius * 0.55
             let shimmer = 0.54 + 0.46 * sin(theta + time * 1.7)
-            let opacity = max(0.12, edgeFade * (0.42 + shimmer * 0.5))
-            let dotSize = side * (0.018 + (1 - baseRadius) * 0.013)
+            let opacity = max(
+                0.12,
+                edgeFade * (0.42 + shimmer * 0.5 + level * 0.18)
+            )
+            let voiceScale = 1 + level * (0.25 + (1 - baseRadius) * 0.55)
+            let dotSize = side
+                * (0.018 + (1 - baseRadius) * 0.013)
+                * voiceScale
             let dotOrigin = CGPoint(x: x - dotSize / 2, y: y - dotSize / 2)
             let dotDimensions = CGSize(width: dotSize, height: dotSize)
             let rect = CGRect(origin: dotOrigin, size: dotDimensions)

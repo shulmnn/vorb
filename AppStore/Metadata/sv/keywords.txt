@@ -1,1 +1,1 @@
-diktering,tal,text,röst,viskning,offline,urklipp,anteckningar,skrivning,ljud
+tal till text,röst till text,diktat,transkription,röstinmatning,Whisper,STT,tryck för att prata

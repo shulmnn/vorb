@@ -1,1 +1,1 @@
-Press Option–Space, speak, and copy the transcript. Run Whisper locally with no key, or bring your own provider—free, private, and subscription-free.
+Turn voice into text anywhere on your Mac. Use one shortcut for fast dictation, run Whisper privately on-device, or bring your own STT provider and API key.

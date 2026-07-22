@@ -1,20 +1,21 @@
-A Vorb egyetlen billentyűkóddal szöveggé változtatja a hangját.
+A Vorb egy natív diktálóalkalmazás a Mac számára, amely a beszédet és a hangot szöveggé alakítja. Nyomjon meg egy billentyűparancsot, beszéljen természetesen, és változtassa hangbevitelét tiszta szöveggé, bárhol is ír.
 
-Nyomja meg a Option–Space gombot az indításhoz és a leállításhoz, vagy válassza a „tartsa a felolvasáshoz” funkciót. A Vorb átírja a felvételt, és az eredményt a vágólapra másolja.
+Hangbevitel, gépelés nélkül
+Nyomja meg a Option–Space gombot az indításhoz és a leállításhoz, vagy válassza az adó-vevő funkciót, és tartsa lenyomva a parancsikont beszéd közben. A Vorb átírja a felvételt, az eredményt a vágólapra másolja, és folyamatosan mozgatja az írási folyamatot a jegyzetekben, üzenetekben, dokumentumokban, e-mailekben és bármely más Mac alkalmazásban.
 
-PRIVÁT · HELYI SUTTOGÁS
-Írja át a hangját teljes egészében szöveggé a Mac számon API billentyű nélkül. A modellek csak akkor töltődnek le, ha a Modell letöltése gombra kattint. Meglévő WhisperKit modellt is importálhat.
+Privát On-Device Whisper
+Teljes beszédfelismerést futtathat a Mac készüléken a Local Whisper segítségével – nincs szükség API key-re. A Whisper modellek csak akkor töltődnek le, ha a Modell letöltése lehetőségre kattint, és ehelyett importálhat egy meglévő WhisperKit modellt. A helyi átírás az eszközön tartja a hangot.
 
-HOZZÁ EL SAJÁT SZOLGÁLTATÓT
-Csatlakoztassa a Groq, OpenAI, Deepgram, Mistral, ElevenLabs számot, egy önálló szervert vagy egy másik kompatibilis végpontot. A billentyűk a macOS Keychain számban maradnak, a hang pedig közvetlenül a kiválasztott szolgáltatóhoz érkezik.
+Hozd el saját STT szolgáltatódat
+Csatlakoztasson Groq, OpenAI, Deepgram, Mistral, ElevenLabs, saját üzemeltetésű Whisper szervert vagy más kompatibilis beszéd-szöveg végpontot. A API key-k macOS Keychain-ben maradnak, és a hang közvetlenül a kiválasztott szolgáltatóhoz érkezik.
 
-ÖSSZPONTOSÍTOTT MUNKÁRA ÉPÍTETT
+Gyors Mac diktálás
 • Konfigurálható globális parancsikon
-• Váltás a felolvasáshoz vagy a tartsa felolvasáshoz
-• Minimális felvételi orb
-• Vágólap kiszállítás
+• Váltás a beszédhez vagy az adó-beszélgetéshez
+• Hangreaktív felvétel orb
+• Automatikus vágólap kézbesítés
 • Optional helyi átírási előzmények
 • Automatikus nyelvérzékelés
 • Nincs Vorb fiók, elemzés, hirdetés vagy előfizetés
 
-A Local Whisper Apple szilikont igényel. Az online szolgáltatóknak és a modellletöltéseknek hálózati kapcsolatra van szükségük.
+A Vorb a hangalapú gépelést, a STT átírást és a Whisper diktálást a macOS natív érzetévé teszi. A Local Whisper-hez Apple szilícium szükséges. Az online szolgáltatóknak és a modellletöltéseknek hálózati kapcsolatra van szükségük.

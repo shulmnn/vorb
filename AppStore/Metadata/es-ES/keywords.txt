@@ -1,1 +1,1 @@
-dictado,habla,texto,voz,susurro,sin conexión,portapapeles,notas,mecanografía,audio
+voz a texto,dictado,transcripción,entrada de voz,Whisper,STT,pulsar para hablar,sin conexión

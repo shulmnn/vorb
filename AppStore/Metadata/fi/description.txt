@@ -1,20 +1,21 @@
-Vorb muuttaa äänesi tekstiksi yhdellä pikanäppäimellä.
+Vorb on natiivi sanelusovellus Mac:lle, joka muuttaa puheen ja äänen tekstiksi. Paina yhtä pikanäppäintä, puhu luonnollisesti ja muuta puhesyötteesi puhtaaksi tekstiksi missä tahansa kirjoitatkin.
 
-Paina Option–Space aloittaaksesi ja lopettaaksesi tai valitse pidä puhuaksesi. Vorb litteroi nauhoitteesi ja kopioi tuloksen leikepöydälle.
+Äänisyöttö ilman kirjoittamista
+Aloita ja lopeta painamalla Option–Space tai valitse pikavalinta ja pidä pikanäppäintä painettuna puhuessasi. Vorb litteroi tallentuksesi, kopioi tuloksen leikepöydälle ja pitää kirjoituskulkusi liikkeessä muistiinpanoissa, viesteissä, asiakirjoissa, sähköpostissa ja missä tahansa muussa Mac-sovelluksessa.
 
-YKSITYINEN · PAIKALLINEN KUISSAUS
-Literoi äänesi kokonaan tekstiksi numerolla Mac ilman näppäintä API. Mallit ladataan vain, kun napsautat Lataa malli. Voit myös tuoda olemassa olevan WhisperKit-mallin.
+Yksityinen laitteessa oleva Whisper
+Suorita puheentunnistus kokonaan Mac:ssä Local Whisper:n kanssa – API key:tä ei tarvita. Whisper-mallit ladataan vain, kun napsautat Lataa malli, ja voit tuoda sen sijaan olemassa olevan WhisperKit-mallin. Paikallinen transkriptio pitää äänen laitteella.
 
-TUO OMA TARJOAJASI
-Yhdistä Groq, OpenAI, Deepgram, Mistral, ElevenLabs, itseisännöity palvelin tai muu yhteensopiva päätepiste. Näppäimet pysyvät numeroissa macOS Keychain ja ääni siirtyy suoraan valitsemallesi palveluntarjoajalle.
+Tuo oma STT-toimittajasi
+Yhdistä Groq, OpenAI, Deepgram, Mistral, ElevenLabs, itseisännöity Whisper-palvelin tai muu yhteensopiva puhe tekstiksi -päätepiste. API key:t pysyvät muodossa macOS Keychain, ja ääni siirtyy suoraan valitsemallesi palveluntarjoajalle.
 
-RAKENNETTU KESKETTYNYTTÄ TYÖTÄ VARTEN
+Nopea Mac sanelu
 • Konfiguroitava yleinen pikakuvake
-• Vaihda puheeksi tai pidä puheeksi
-• Minimaalinen tallennuspallo
-• Leikepöydän toimitus
+• Vaihda puheeksi tai pikapuheluksi
+• Äänireaktiivinen tallennus orb
+• Automaattinen leikepöydän toimitus
 • Optional paikallinen transkriptiohistoria
 • Automaattinen kielentunnistus
 • Ei Vorb-tiliä, analytiikkaa, mainontaa tai tilausta
 
-Local Whisper vaatii Applen piitä. Verkkopalveluntarjoajat ja mallilataukset vaativat verkkoyhteyden.
+Vorb saa äänikirjoituksen, STT-transkription ja Whisper-sanelun tuntumaan macOS:n alkuperäiseltä. Local Whisper vaatii Applen piitä. Verkkopalveluntarjoajat ja mallilataukset vaativat verkkoyhteyden.

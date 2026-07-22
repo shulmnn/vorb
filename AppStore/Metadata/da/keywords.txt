@@ -1,1 +1,1 @@
-diktering,tale,tekst,stemme,hvisken,offline,udklipsholder,noter,indtastning,lyd
+tale til tekst,stemme til sms,diktat,transskription,stemmeinput,Whisper,STT,tryk for at tale,offline

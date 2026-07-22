@@ -1,1 +1,1 @@
-Vorb kini tersedia untuk macOS dengan Whisper tempatan, transkripsi penyedia bawa-anda-sendiri, pintasan boleh dikonfigurasikan, penghantaran papan keratan dan sejarah pilihan.
+Vorb kini tersedia untuk macOS dengan Local Whisper suara-ke-teks, bawa transkripsi pertuturan penyedia-anda-sendiri, pintasan boleh dikonfigurasikan, bola reaktif suara, penghantaran papan keratan dan sejarah pilihan.

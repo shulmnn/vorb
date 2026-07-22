@@ -1,1 +1,1 @@
-dictation,speech,text,voice,whisper,offline,clipboard,notes,typing,audio
+speech to text,voice to text,dictation,transcription,voice input,Whisper,STT,push to talk,offline

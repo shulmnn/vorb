@@ -1,1 +1,1 @@
-비공개 Whisper 받아쓰기
+Whisper 음성을 텍스트로

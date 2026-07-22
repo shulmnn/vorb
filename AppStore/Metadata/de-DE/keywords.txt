@@ -1,1 +1,1 @@
-Diktat,Sprache,Text,Stimme,Flüstern,offline,Zwischenablage,Notizen,Eingabe,Audio
+sprache zu text,stimme zu text,diktieren,transkription,spracheingabe,Whisper,STT,Push-to-Talk

@@ -1,1 +1,1 @@
-Vorb är nu tillgängligt för macOS med lokal Whisper, ta med din egen leverantör-transkription, konfigurerbara genvägar, leverans av urklipp och valfri historik.
+Vorb är nu tillgänglig för macOS med Local Whisper röst-till-text, ta med din egen leverantör tatranskription, konfigurerbara genvägar, en röstreaktiv orb, urklippsleverans och valfri historik.

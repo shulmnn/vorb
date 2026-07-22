@@ -1,1 +1,1 @@
-Vorb jest teraz dostępne dla macOS z lokalnym Whisper, transkrypcją od dostawcy typu „przynieś własnego”, konfigurowalnymi skrótami, dostarczaniem do schowka i opcjonalną historią.
+Vorb jest teraz dostępny dla macOS z Local Whisper zamianą głosu na tekst, transkrypcją mowy własnego dostawcy, konfigurowalnymi skrótami, kulą reagującą na głos, dostarczaniem schowka i opcjonalną historią.

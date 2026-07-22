@@ -1,1 +1,1 @@
-sanelu,puhe,teksti,ääni,kuiskaus,offline,leikepöytä,muistiinpanot,kirjoittaminen,ääni
+puhe tekstiksi,ääni tekstiksi,sanelu,transkriptio,äänisyöttö,Whisper,STT,push puhua

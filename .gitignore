@@ -6,6 +6,9 @@ dist/
 *.xcuserstate
 DerivedData/
 *.profraw
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots.html
 Scripts/__pycache__/
 *.pyc
 

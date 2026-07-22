@@ -1,20 +1,21 @@
-Vorb verwandelt Ihre Stimme mit einer Tastenkombination in Text.
+Vorb ist eine native Diktier-App für Mac, die Sprache und Stimme in Text umwandelt. Drücken Sie eine Tastenkombination, sprechen Sie natürlich und wandeln Sie Ihre Spracheingabe überall dort, wo Sie schreiben, in klaren Text um.
 
-Drücken Sie Option–Space zum Starten und Stoppen oder wählen Sie „Halten zum Sprechen“. Vorb transkribiert Ihre Aufnahme und kopiert das Ergebnis in die Zwischenablage.
+Spracheingabe, ohne Tippen
+Drücken Sie Option–Space zum Starten und Stoppen oder wählen Sie Push-to-Talk und halten Sie die Tastenkombination gedrückt, während Sie sprechen. Vorb transkribiert Ihre Aufnahme, kopiert das Ergebnis in die Zwischenablage und hält Ihren Schreibfluss in Notizen, Nachrichten, Dokumenten, E-Mails und jeder anderen Mac-App am Laufen.
 
-PRIVAT · LOKALES Flüstern
-Transkribieren Sie Ihre Stimme vollständig auf Ihrem Mac in Text, ohne die Taste API. Modelle werden nur heruntergeladen, wenn Sie auf „Modell herunterladen“ klicken. Sie können auch ein vorhandenes WhisperKit-Modell importieren.
+Privat auf dem Gerät Whisper
+Führen Sie die Spracherkennung vollständig auf Ihrem Mac mit Local Whisper aus – kein API key erforderlich. Whisper-Modelle werden nur heruntergeladen, wenn Sie auf Modell herunterladen klicken. Sie können stattdessen ein vorhandenes WhisperKit-Modell importieren. Durch die lokale Transkription bleibt Ihr Audio auf dem Gerät.
 
-Bringen Sie Ihren eigenen Anbieter mit
-Verbinden Sie Groq, OpenAI, Deepgram, Mistral, ElevenLabs, einen selbst gehosteten Server oder einen anderen kompatiblen Endpunkt. Die Tasten bleiben in macOS Keychain und der Ton geht direkt an den von Ihnen ausgewählten Anbieter.
+Bringen Sie Ihren eigenen STT-Anbieter mit
+Verbinden Sie Groq, OpenAI, Deepgram, Mistral, ElevenLabs, einen selbstgehosteten Whisper-Server oder einen anderen kompatiblen Sprache-zu-Text-Endpunkt. Ihre API keys bleiben im macOS Keychain und der Ton geht direkt an den von Ihnen ausgewählten Anbieter.
 
-Gebaut für konzentriertes Arbeiten
+Schnelles Mac-Diktieren
 • Konfigurierbare globale Verknüpfung
-• Umschalten zum Sprechen oder Halten zum Sprechen
-• Minimale Aufnahmekugel
-• Lieferung über die Zwischenablage
-• Optionaler lokaler Transkriptverlauf
+• Umschalten zum Sprechen oder Push-to-Talk
+• Sprachreaktive Aufnahmekugel
+• Automatische Zustellung in die Zwischenablage
+• Optional lokaler Transkriptverlauf
 • Automatische Spracherkennung
 • Kein Vorb-Konto, keine Analysen, keine Werbung oder kein Abonnement
 
-Local Whisper erfordert Apple-Silizium. Online-Anbieter und Modell-Downloads erfordern eine Netzwerkverbindung.
+Mit Vorb fühlen sich Spracheingabe, STT-Transkription und Whisper-Diktat wie mit macOS vertraut an. Local Whisper erfordert Apple-Silizium. Online-Anbieter und Modell-Downloads erfordern eine Netzwerkverbindung.

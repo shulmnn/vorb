@@ -1,20 +1,21 @@
-Vorb transforme votre voix en texte avec un seul raccourci clavier.
+Vorb est une application de dictée native pour Mac qui transforme la parole et la voix en texte. Appuyez sur un raccourci clavier, parlez naturellement et transformez votre saisie vocale en texte clair partout où vous écrivez.
 
-Appuyez sur Option–Space pour démarrer et arrêter, ou choisissez tenir pour parler. Vorb transcrit votre enregistrement et copie le résultat dans le presse-papiers.
+Saisie vocale, sans saisie
+Appuyez sur Option–Space pour démarrer et arrêter, ou choisissez Push-to-Talk et maintenez le raccourci enfoncé tout en parlant. Le Vorb transcrit votre enregistrement, copie le résultat dans le presse-papiers et maintient votre flux d'écriture dans les notes, les messages, les documents, les e-mails et toute autre application Mac.
 
-PRIVÉ · CHUCHOTEMENT LOCAL
-Transcrivez entièrement votre voix en texte sur votre Mac sans la touche API. Les modèles sont téléchargés uniquement lorsque vous cliquez sur Télécharger le modèle. Vous pouvez également importer un modèle WhisperKit existant.
+Appareil privé Whisper
+Exécutez la reconnaissance vocale entièrement sur votre Mac avec Local Whisper : aucun API key n'est requis. Les modèles Whisper sont téléchargés uniquement lorsque vous cliquez sur Télécharger le modèle et vous pouvez importer un modèle WhisperKit existant à la place. La transcription locale conserve votre audio sur l'appareil.
 
-APPORTEZ VOTRE PROPRE FOURNISSEUR
-Connectez Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un serveur auto-hébergé ou un autre point de terminaison compatible. Les clés restent dans macOS Keychain et l'audio va directement au fournisseur que vous sélectionnez.
+Apportez votre propre fournisseur STT
+Connectez Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un serveur Whisper auto-hébergé ou un autre point de terminaison de synthèse vocale compatible. Vos API key restent dans macOS Keychain et l'audio va directement au fournisseur que vous sélectionnez.
 
-CONÇU POUR UN TRAVAIL CONCENTRÉ
+Dictée rapide Mac
 • Raccourci global configurable
-• Basculer pour parler ou maintenir pour parler
-• Orbe d'enregistrement minimal
-• Livraison du presse-papiers
-• Optionhistorique des transcriptions locales
+• Basculer pour parler ou appuyer pour parler
+• Orbe d'enregistrement réactif à la voix
+• Livraison automatique du presse-papiers
+• Historique des transcriptions locales Optional
 • Détection automatique de la langue
-• Pas de compte Vorb, d'analyse, de publicité ou d'abonnement
+• Pas de compte Vorb, d'analyse, de publicité ou d'abonnement.
 
-Local Whisper nécessite du silicium Apple. Les fournisseurs en ligne et les téléchargements de modèles nécessitent une connexion réseau.
+Avec le Vorb, la saisie vocale, la transcription du STT et la dictée du Whisper semblent natives du macOS. Le Local Whisper nécessite du silicium Apple. Les fournisseurs en ligne et les téléchargements de modèles nécessitent une connexion réseau.

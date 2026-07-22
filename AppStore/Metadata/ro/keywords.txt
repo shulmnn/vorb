@@ -1,1 +1,1 @@
-dictare,vorbire,text,voce,șoaptă,offline,clipboard,note,tastare,audio
+vorbire în text,voce la text,dictarea,transcrierea,intrare vocală,Whisper,STT,offline

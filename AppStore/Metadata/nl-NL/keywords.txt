@@ -1,1 +1,1 @@
-dicteren,spraak,tekst,stem,fluisteren,offline,klembord,notities,typen,audio
+spraak naar tekst,stem naar tekst,dictaat,transcriptie,steminvoer,Whisper,STT,offline

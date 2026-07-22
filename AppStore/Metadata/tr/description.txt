@@ -1,20 +1,21 @@
-Vorb tek bir klavye kısayoluyla sesinizi metne dönüştürür.
+Vorb, Mac için konuşmayı ve sesi metne dönüştüren yerel bir dikte uygulamasıdır. Bir klavye kısayoluna basın, doğal bir şekilde konuşun ve yazdığınız her yerde ses girişinizi temiz metne dönüştürün.
 
-Başlatmak ve durdurmak için Option–Space tuşuna basın veya konuşmayı basılı tutmayı seçin. Vorb kaydınızı yazıya döker ve sonucu panoya kopyalar.
+Yazmadan Ses Girişi
+Başlatmak ve durdurmak için Option–Space tuşuna basın veya bas-konuş seçeneğini seçin ve konuşurken kısayolu basılı tutun. Vorb kaydınızı yazıya döker, sonucu panoya kopyalar ve notlar, mesajlar, belgeler, e-posta ve diğer Mac uygulamalarında yazma akışınızın devam etmesini sağlar.
 
-ÖZEL · YEREL FISILTI
-API tuşuna gerek kalmadan Mac cihazınızda sesinizi tamamen metne dönüştürün. Modeller yalnızca Modeli İndir'e tıkladığınızda indirilir. Ayrıca mevcut bir WhisperKit modelini de içe aktarabilirsiniz.
+Özel Cihaz Üzerinde Whisper
+Local Whisper ile konuşma tanımayı tamamen Mac cihazınızda çalıştırın; API key gerekmez. Whisper modelleri yalnızca Modeli İndir'e tıkladığınızda indirilir ve bunun yerine mevcut bir WhisperKit modelini içe aktarabilirsiniz. Yerel transkripsiyon sesinizi cihazda tutar.
 
-KENDİ SAĞLAYICINI GETİR
-Groq, OpenAI, Deepgram, Mistral, ElevenLabs'yi, şirket içinde barındırılan bir sunucuyu veya başka bir uyumlu uç noktayı bağlayın. Anahtarlar macOS Keychain'de kalır ve ses doğrudan seçtiğiniz sağlayıcıya gider.
+Kendi STT Sağlayıcınızı Getirin
+Groq, OpenAI, Deepgram, Mistral, ElevenLabs'yi, şirket içinde barındırılan bir Whisper sunucusunu veya başka bir uyumlu konuşmayı metne dönüştürme uç noktasını bağlayın. API key'leriniz macOS Keychain'de kalır ve ses doğrudan seçtiğiniz sağlayıcıya gider.
 
-ODAKLI ÇALIŞMA İÇİN TASARLANDI
+Hızlı Mac Dikte
 • Yapılandırılabilir genel kısayol
-• Konuşmak için geçiş yapın veya konuşmak için basılı tutun
-• Minimum kayıt küresi
-• Pano teslimatı
+• Konuşmak için geçiş veya bas-konuş
+• Sesle tepkimeli kayıt küresi
+• Otomatik pano teslimi
 • Optional yerel transkript geçmişi
 • Otomatik dil algılama
-• Vorb hesap, analiz, reklam veya abonelik yok
+• Vorb hesabı, analiz, reklam veya abonelik yok
 
-Local Whisper Apple silikon gerektirir. Çevrimiçi sağlayıcılar ve model indirmeleri bir ağ bağlantısı gerektirir.
+Vorb, sesle yazma, STT transkripsiyon ve Whisper dikte etme özelliklerinin macOS'ye özgü olmasını sağlar. Local Whisper, Apple silikonunu gerektirir. Çevrimiçi sağlayıcılar ve model indirmeleri bir ağ bağlantısı gerektirir.

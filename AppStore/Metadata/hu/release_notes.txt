@@ -1,1 +1,1 @@
-A Vorb már elérhető a macOS számára a helyi Whisper számmal, a saját szolgáltató általi átírással, a konfigurálható parancsikonokkal, a vágólap kézbesítésével és az opcionális előzményekkel.
+A Vorb már elérhető a macOS számára a Local Whisper hangból szöveggé alakítással, saját beszédátírással, konfigurálható parancsikonokkal, hangreaktív gömbbel, vágólap kézbesítéssel és opcionális előzményekkel.

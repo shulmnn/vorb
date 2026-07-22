@@ -1,20 +1,21 @@
-Vorb vă transformă vocea în text cu o comandă rapidă de la tastatură.
+Vorb este o aplicație nativă de dictare pentru Mac care transformă vorbirea și vocea în text. Apăsați pe o comandă rapidă de la tastatură, vorbiți natural și transformați-vă introducerea vocală în text curat oriunde scrieți.
 
-Apăsați Option–Space pentru a porni și opri, sau alegeți țineți apăsat pentru a vorbi. Vorb transcrie înregistrarea și copiază rezultatul în clipboard.
+Intrare vocală, fără tastare
+Apăsați Option–Space pentru a porni și opri, sau alegeți apăsați pentru a vorbi și țineți apăsată comanda rapidă în timp ce vorbiți. Vorb vă transcrie înregistrarea, copiază rezultatul în clipboard și vă menține fluxul de scriere în mișcare în note, mesaje, documente, e-mail și orice altă aplicație Mac.
 
-PRIVAT · ȘOPTĂ LOCALĂ
-Transcrie-ți vocea în text în întregime pe Mac, fără tasta API. Modelele se descarcă numai când dați clic pe Descărcare model. De asemenea, puteți importa un model existent WhisperKit.
+Privat pe dispozitiv Whisper
+Rulați recunoașterea vorbirii în întregime pe Mac cu Local Whisper — nu este necesar API key. Modelele Whisper se descarcă numai când faceți clic pe Descărcare model și puteți importa în schimb un model WhisperKit existent. Transcrierea locală vă păstrează sunetul pe dispozitiv.
 
-Aduceți-vă PROPRIUL FURNIZOR
-Conectați Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un server auto-găzduit sau un alt punct final compatibil. Cheile rămân în macOS Keychain, iar sunetul ajunge direct la furnizorul pe care îl selectați.
+Aduceți-vă propriul furnizor STT
+Conectați Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un server Whisper găzduit de sine stătător sau un alt punct final compatibil vorbire în text. API key-urile dvs. rămân în macOS Keychain, iar sunetul ajunge direct la furnizorul pe care îl selectați.
 
-CONSTRUIT PENTRU MUNCĂ FOCALIZATĂ
+Dictare rapidă Mac
 • Comandă rapidă globală configurabilă
-• Comutați pentru a vorbi sau țineți apăsat pentru a vorbi
-• Sfera de înregistrare minimă
-• Livrare clipboard
-• Optional istoric de transcriere locală
+• Comutați pentru a vorbi sau apăsați pentru a vorbi
+• Orb de înregistrare reactivă la voce
+• Livrare automată în clipboard
+• Optional istoricul transcripției locale
 • Detectare automată a limbii
 • Fără cont Vorb, analize, publicitate sau abonament
 
-Local Whisper necesită silicon Apple. Furnizorii online și descărcări de modele necesită o conexiune la rețea.
+Vorb face ca tastarea vocală, transcrierea STT și dictarea Whisper să pară native pentru macOS. Local Whisper necesită silicon Apple. Furnizorii online și descărcări de modele necesită o conexiune la rețea.

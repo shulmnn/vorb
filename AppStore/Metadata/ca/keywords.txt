@@ -1,1 +1,1 @@
-dictat,parla,text,veu,xiuxiueig,fora de línia,porta-retalls,notes,mecanografia,àudio
+parla a text,veu a text,dictat,transcripció,entrada de veu,Whisper,STT,empeny per parlar

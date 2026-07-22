@@ -10,8 +10,9 @@ iconset_dir="$output_dir/Vorb.iconset"
 app_identity="${APP_STORE_SIGNING_IDENTITY:--}"
 installer_identity="${APP_STORE_INSTALLER_IDENTITY:-}"
 provisioning_profile="${APP_STORE_PROVISIONING_PROFILE:-}"
-marketing_version="${MARKETING_VERSION:-1.0.0}"
-build_number="${BUILD_NUMBER:-1}"
+signing_keychain="${APP_STORE_KEYCHAIN:-}"
+marketing_version="${MARKETING_VERSION:-1.0}"
+build_number="${BUILD_NUMBER:-2}"
 production_entitlements="$repo_root/Packaging/AppStore.entitlements"
 development_entitlements="$repo_root/Packaging/AppStoreDevelopment.entitlements"
 
@@ -92,14 +93,22 @@ codesign_options=(
 if [[ "$app_identity" != "-" ]]; then
     codesign_options+=(--timestamp)
 fi
+if [[ -n "$signing_keychain" ]]; then
+    codesign_options+=(--keychain "$signing_keychain")
+fi
 codesign "${codesign_options[@]}" "$app_dir"
 codesign --verify --deep --strict --verbose=2 "$app_dir"
 
 if [[ -n "$installer_identity" ]]; then
-    productbuild \
-        --component "$app_dir" /Applications \
-        --sign "$installer_identity" \
-        "$pkg_path"
+    productbuild_options=(
+        --component "$app_dir" /Applications
+        --sign "$installer_identity"
+    )
+    if [[ -n "$signing_keychain" ]]; then
+        productbuild_options+=(--keychain "$signing_keychain")
+    fi
+    productbuild_options+=(--timestamp "$pkg_path")
+    productbuild "${productbuild_options[@]}"
 else
     productbuild --component "$app_dir" /Applications "$pkg_path"
 fi

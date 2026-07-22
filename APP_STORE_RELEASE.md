@@ -1,16 +1,16 @@
 # Mac App Store release checklist
 
-Vorb uses the bundle identifier `com.amnios.vorb`, version `1.0.0`, build `1`, and the Productivity category.
+Vorb uses the bundle identifier `vorb.shulmnn.com`, version `1.0`, build `2`, and the Productivity category.
 
 Use [APP_STORE_METADATA_EN.md](APP_STORE_METADATA_EN.md) for the complete English (U.S.) product-page copy, App Review notes, privacy and age-rating answers, screenshot copy, compliance fields, and TestFlight metadata.
 
 ## Before packaging
 
 - Reserve the Vorb name and create the matching macOS App ID in App Store Connect.
-- Create Mac App Distribution and Mac Installer Distribution certificates and a provisioning profile for `com.amnios.vorb`.
+- Create Mac App Distribution and Mac Installer Distribution certificates and a provisioning profile for `vorb.shulmnn.com`.
 - Verify the live [privacy policy](https://vorb.shulmnn.com/privacy) and [support page](https://vorb.shulmnn.com/support). App Store Connect requires both URLs.
 - Review the generated metadata in `AppStore/Metadata`. All 50 App Store localizations are present; machine-generated translations should receive native-speaker review before submission.
-- Complete the App Privacy questionnaire as no data collected by Amnios Group. Clearly disclose that user-selected third-party transcription providers receive audio directly.
+- Keep the published App Privacy disclosure aligned with the final binary: optional hosted transcription collects Audio Data for App Functionality, links it to the user through their provider account, and does not use it for tracking. Local Whisper remains on-device.
 - Test microphone and local-network permissions, Local Whisper model download, global Option–Space, clipboard copy, history, menu-bar hiding, and relaunch on a clean macOS account.
 
 ## Build the upload package
@@ -19,8 +19,8 @@ Use [APP_STORE_METADATA_EN.md](APP_STORE_METADATA_EN.md) for the complete Englis
 APP_STORE_SIGNING_IDENTITY="Apple Distribution: COMPANY (TEAMID)" \
 APP_STORE_INSTALLER_IDENTITY="3rd Party Mac Developer Installer: COMPANY (TEAMID)" \
 APP_STORE_PROVISIONING_PROFILE="/absolute/path/to/profile.provisionprofile" \
-MARKETING_VERSION="1.0.0" \
-BUILD_NUMBER="1" \
+MARKETING_VERSION="1.0" \
+BUILD_NUMBER="2" \
 ./Scripts/package_app_store.sh
 ```
 

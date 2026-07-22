@@ -1,1 +1,1 @@
-Vorb is nu beschikbaar voor macOS met lokale Whisper, transcriptie met uw eigen provider, configureerbare snelkoppelingen, klembordlevering en optionele geschiedenis.
+Vorb is nu beschikbaar voor macOS met Local Whisper spraak-naar-tekst, spraaktranscriptie van uw eigen provider, configureerbare snelkoppelingen, een stem-reactieve bol, klembordlevering en optionele geschiedenis.

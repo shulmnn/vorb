@@ -1,20 +1,21 @@
-Vorb turns your voice into text with one keyboard shortcut.
+Vorb is a native dictation app for Mac that turns speech and voice into text. Press one keyboard shortcut, speak naturally, and turn your voice input into clean text wherever you write.
 
-Press Option–Space to start and stop, or choose hold-to-speak. Vorb transcribes your recording and copies the result to the clipboard.
+Voice Input, Without the Typing
+Press Option–Space to start and stop, or choose push-to-talk and hold the shortcut while speaking. Vorb transcribes your recording, copies the result to the clipboard, and keeps your writing flow moving in notes, messages, documents, email, and any other Mac app.
 
-PRIVATE · LOCAL WHISPER
-Transcribe your voice into text entirely on your Mac with no API key. Models download only when you click Download Model. You can also import an existing WhisperKit model.
+Private On-Device Whisper
+Run speech recognition entirely on your Mac with Local Whisper—no API key required. Whisper models download only when you click Download Model, and you can import an existing WhisperKit model instead. Local transcription keeps your audio on-device.
 
-BRING YOUR OWN PROVIDER
-Connect Groq, OpenAI, Deepgram, Mistral, ElevenLabs, a self-hosted server, or another compatible endpoint. Keys stay in macOS Keychain, and audio goes directly to the provider you select.
+Bring Your Own STT Provider
+Connect Groq, OpenAI, Deepgram, Mistral, ElevenLabs, a self-hosted Whisper server, or another compatible speech-to-text endpoint. Your API keys stay in macOS Keychain, and audio goes directly to the provider you select.
 
-BUILT FOR FOCUSED WORK
+Fast Mac Dictation
 • Configurable global shortcut
-• Toggle-to-speak or hold-to-speak
-• Minimal recording orb
-• Clipboard delivery
+• Toggle-to-speak or push-to-talk
+• Voice-reactive recording orb
+• Automatic clipboard delivery
 • Optional local transcript history
 • Automatic language detection
 • No Vorb account, analytics, advertising, or subscription
 
-Local Whisper requires Apple silicon. Online providers and model downloads require a network connection.
+Vorb makes voice typing, STT transcription, and Whisper dictation feel native to macOS. Local Whisper requires Apple silicon. Online providers and model downloads require a network connection.

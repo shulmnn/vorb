@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import http.client
 import re
 import time
 import urllib.parse
@@ -71,6 +72,22 @@ LOCALES = {
     "uk": "uk",
     "ur": "ur",
     "vi": "vi",
+}
+
+# App bundle localizations use language-only folders for these languages,
+# while App Store Connect requires the region-qualified locale identifiers.
+APP_STORE_LOCALE_ALIASES = {
+    "bn": "bn-BD",
+    "gu": "gu-IN",
+    "kn": "kn-IN",
+    "ml": "ml-IN",
+    "mr": "mr-IN",
+    "or": "or-IN",
+    "pa": "pa-IN",
+    "sl": "sl-SI",
+    "ta": "ta-IN",
+    "te": "te-IN",
+    "ur": "ur-PK",
 }
 
 # Screenshot-facing release copy receives a human pass. These overrides also
@@ -179,6 +196,21 @@ MANUAL_OVERRIDES = {
         "Stored locally on this Mac": "Хранится локально на этом Mac",
         "Clear…": "Очистить…",
     },
+}
+
+# The ten screenshot languages receive hand-tuned discovery terms. App Store
+# keywords are terse search phrases, so sentence-oriented machine translation
+# often chooses the wrong sense of words such as dictation or push-to-talk.
+KEYWORD_OVERRIDES = {
+    "de-DE": "sprache zu text,stimme zu text,diktieren,transkription,spracheingabe,Whisper,STT,Push-to-Talk,offline",
+    "fr-FR": "parole en texte,voix en texte,dictée,transcription,saisie vocale,Whisper,STT,Push-to-Talk,hors ligne",
+    "es-ES": "voz a texto,dictado,transcripción,entrada de voz,Whisper,STT,pulsar para hablar,sin conexión",
+    "pt-BR": "voz para texto,ditado,transcrição,entrada de voz,Whisper,STT,premir para falar,offline",
+    "it": "voce in testo,dettatura,trascrizione,input vocale,Whisper,STT,premi per parlare,offline",
+    "ja": "音声テキスト変換,音声入力,音声文字起こし,ディクテーション,Whisper,STT,プッシュトゥトーク,オフライン",
+    "ko": "음성 텍스트 변환,음성 입력,받아쓰기,음성 전사,Whisper,STT,눌러서 말하기,오프라인",
+    "zh-Hans": "语音转文字,语音输入,听写,转录,Whisper,STT,按键通话,离线",
+    "ru": "речь в текст,голос в текст,диктовка,транскрипция,голосовой ввод,Whisper,STT,нажми и говори,офлайн",
 }
 
 MODEL_DETAIL_STRINGS = [
@@ -396,35 +428,48 @@ LOCAL_NETWORK_DESCRIPTION = (
     "you choose a self-hosted provider."
 )
 
-SUBTITLE = "Private Whisper Dictation"
+SUBTITLE = "Whisper Voice to Text"
 PROMOTIONAL_TEXT = (
-    "Press Option–Space, speak, and copy the transcript. Run Whisper locally "
-    "with no key, or bring your own provider—free, private, and subscription-free."
+    "Turn voice into text anywhere on your Mac. Use one shortcut for fast "
+    "dictation, run Whisper privately on-device, or bring your own STT provider and API key."
 )
-DESCRIPTION = """Vorb turns your voice into text with one keyboard shortcut.
+DESCRIPTION = """Vorb is a native dictation app for Mac that turns speech and voice into text. Press one keyboard shortcut, speak naturally, and turn your voice input into clean text wherever you write.
 
-Press Option–Space to start and stop, or choose hold-to-speak. Vorb transcribes your recording and copies the result to the clipboard.
+Voice Input, Without the Typing
+Press Option–Space to start and stop, or choose push-to-talk and hold the shortcut while speaking. Vorb transcribes your recording, copies the result to the clipboard, and keeps your writing flow moving in notes, messages, documents, email, and any other Mac app.
 
-PRIVATE · LOCAL WHISPER
-Transcribe your voice into text entirely on your Mac with no API key. Models download only when you click Download Model. You can also import an existing WhisperKit model.
+Private On-Device Whisper
+Run speech recognition entirely on your Mac with Local Whisper—no API key required. Whisper models download only when you click Download Model, and you can import an existing WhisperKit model instead. Local transcription keeps your audio on-device.
 
-BRING YOUR OWN PROVIDER
-Connect Groq, OpenAI, Deepgram, Mistral, ElevenLabs, a self-hosted server, or another compatible endpoint. Keys stay in macOS Keychain, and audio goes directly to the provider you select.
+Bring Your Own STT Provider
+Connect Groq, OpenAI, Deepgram, Mistral, ElevenLabs, a self-hosted Whisper server, or another compatible speech-to-text endpoint. Your API keys stay in macOS Keychain, and audio goes directly to the provider you select.
 
-BUILT FOR FOCUSED WORK
+Fast Mac Dictation
 • Configurable global shortcut
-• Toggle-to-speak or hold-to-speak
-• Minimal recording orb
-• Clipboard delivery
+• Toggle-to-speak or push-to-talk
+• Voice-reactive recording orb
+• Automatic clipboard delivery
 • Optional local transcript history
 • Automatic language detection
 • No Vorb account, analytics, advertising, or subscription
 
-Local Whisper requires Apple silicon. Online providers and model downloads require a network connection."""
-KEYWORDS = "dictation,speech,text,voice,whisper,offline,clipboard,notes,typing,audio"
+Vorb makes voice typing, STT transcription, and Whisper dictation feel native to macOS. Local Whisper requires Apple silicon. Online providers and model downloads require a network connection."""
+KEYWORD_TERMS = [
+    "speech to text",
+    "voice to text",
+    "dictation",
+    "transcription",
+    "voice input",
+    "Whisper",
+    "STT",
+    "push to talk",
+    "offline",
+]
+KEYWORDS = ",".join(KEYWORD_TERMS)
 WHATS_NEW = (
-    "Vorb is now available for macOS with local Whisper, bring-your-own-provider "
-    "transcription, configurable shortcuts, clipboard delivery, and optional history."
+    "Vorb is now available for macOS with Local Whisper voice-to-text, bring-your-own-provider "
+    "speech transcription, configurable shortcuts, a voice-reactive orb, clipboard delivery, "
+    "and optional history."
 )
 
 METADATA_STRINGS = [
@@ -437,7 +482,7 @@ METADATA_STRINGS = [
     LOCAL_NETWORK_DESCRIPTION,
 ]
 
-CACHE_VERSION = 3
+CACHE_VERSION = 6
 
 # Product, platform, protocol, and provider names must never be translated as
 # ordinary words (for example, Whisper must not become “chuchotement”).
@@ -448,6 +493,7 @@ PROTECTED_TERMS = sorted(
         "OVHcloud AI Endpoints",
         "Mac App Store",
         "Hugging Face",
+        "API key",
         "Local Whisper",
         "WhisperKit",
         "WhisperLiveKit",
@@ -500,13 +546,13 @@ PROTECTED_TERMS = sorted(
 )
 
 PLACEHOLDERS = {
-    # Bracketed numeric tokens survive Google Translate across every launch
-    # language, including Arabic and CJK. Word-like placeholder names were
-    # themselves translated in some locales and could not be restored.
-    "%lld": "⟦900⟧",
-    "%@": "⟦901⟧",
+    # Uppercase alphanumeric sentinels stay intact across all launch languages.
+    # Bracketed numeric tokens were localized or partially stripped in Marathi,
+    # Greek, and Odia, leaking marker characters into Store metadata.
+    "%lld": "ZXQ900QXZ",
+    "%@": "ZXQ901QXZ",
     **{
-        term: f"⟦{index:03d}⟧"
+        term: f"ZXQ{index:03d}QXZ"
         for index, term in enumerate(PROTECTED_TERMS)
     },
 }
@@ -600,7 +646,7 @@ def fetch_translation(request: urllib.request.Request) -> list:
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
                 return json.loads(response.read().decode("utf-8"))
-        except (URLError, TimeoutError) as error:
+        except (URLError, TimeoutError, http.client.HTTPException) as error:
             last_error = error
             time.sleep(0.4 * (attempt + 1))
     assert last_error is not None
@@ -646,12 +692,20 @@ def write_info_plist_strings(path: Path, translations: dict[str, str]) -> None:
 
 
 def trim_utf8_keywords(value: str, limit: int = 100) -> str:
+    # Translation services often localize commas. Normalize the punctuation so
+    # every locale still produces valid App Store keyword tokens.
+    value = re.sub(r"[，、،؛;\n]+", ",", value)
     terms = [term.strip() for term in value.split(",") if term.strip()]
     chosen: list[str] = []
+    seen: set[str] = set()
     for term in terms:
+        normalized = term.casefold()
+        if normalized in seen:
+            continue
         candidate = ",".join([*chosen, term])
         if len(candidate.encode("utf-8")) <= limit:
             chosen.append(term)
+            seen.add(normalized)
     return ",".join(chosen)
 
 
@@ -664,14 +718,21 @@ def compact(value: str, limit: int) -> str:
 
 
 def write_metadata(locale: str, translations: dict[str, str]) -> None:
-    folder = METADATA / locale
+    folder = METADATA / APP_STORE_LOCALE_ALIASES.get(locale, locale)
     folder.mkdir(parents=True, exist_ok=True)
     fields = {
-        "name.txt": "Vorb",
+        "name.txt": "Vorb: Whisper Voice to Text",
         "subtitle.txt": compact(translations[SUBTITLE], 30),
         "promotional_text.txt": compact(translations[PROMOTIONAL_TEXT], 170),
         "description.txt": translations[DESCRIPTION].strip(),
-        "keywords.txt": trim_utf8_keywords(translations[KEYWORDS]),
+        # Translate phrases independently so localized punctuation cannot
+        # collapse an entire CJK or Arabic keyword field into one token.
+        "keywords.txt": trim_utf8_keywords(
+            KEYWORD_OVERRIDES.get(
+                locale,
+                ",".join(translations[term] for term in KEYWORD_TERMS),
+            )
+        ),
         "release_notes.txt": compact(translations[WHATS_NEW], 4000),
         "marketing_url.txt": "https://vorb.shulmnn.com",
         "support_url.txt": "https://vorb.shulmnn.com/support",
@@ -683,7 +744,7 @@ def write_metadata(locale: str, translations: dict[str, str]) -> None:
 
 def main() -> None:
     cache = load_cache()
-    values = list(dict.fromkeys([*UI_STRINGS, *METADATA_STRINGS]))
+    values = list(dict.fromkeys([*UI_STRINGS, *METADATA_STRINGS, *KEYWORD_TERMS]))
 
     def build(item: tuple[str, str]) -> tuple[str, dict[str, str]]:
         locale, target = item

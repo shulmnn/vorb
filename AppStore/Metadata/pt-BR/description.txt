@@ -1,20 +1,21 @@
-Vorb transforma sua voz em texto com um atalho de teclado.
+Vorb é um aplicativo de ditado nativo para Mac que transforma fala e voz em texto. Pressione um atalho de teclado, fale naturalmente e transforme sua entrada de voz em texto limpo onde quer que você escreva.
 
-Pressione Option–Space para iniciar e parar ou escolha segurar para falar. Vorb transcreve sua gravação e copia o resultado para a área de transferência.
+Entrada de voz, sem digitação
+Pressione Option–Space para iniciar e parar ou escolha apertar para falar e segure o atalho enquanto fala. Vorb transcreve sua gravação, copia o resultado para a área de transferência e mantém seu fluxo de escrita em notas, mensagens, documentos, e-mail e qualquer outro aplicativo Mac.
 
-PRIVADO · SUSSURRO LOCAL
-Transcreva sua voz em texto inteiramente em seu Mac sem a tecla API. Os modelos são baixados somente quando você clica em Baixar modelo. Você também pode importar um modelo WhisperKit existente.
+Whisper privado no dispositivo
+Execute o reconhecimento de fala inteiramente em seu Mac com Local Whisper – não é necessário API key. Os modelos Whisper são baixados somente quando você clica em Baixar modelo e, em vez disso, você pode importar um modelo WhisperKit existente. A transcrição local mantém seu áudio no dispositivo.
 
-TRAGA SEU PRÓPRIO FORNECEDOR
-Conecte Groq, OpenAI, Deepgram, Mistral, ElevenLabs, um servidor auto-hospedado ou outro endpoint compatível. As chaves permanecem em macOS Keychain e o áudio vai diretamente para o provedor que você selecionar.
+Traga seu próprio provedor STT
+Conecte Groq, OpenAI, Deepgram, Mistral, ElevenLabs, um servidor Whisper auto-hospedado ou outro endpoint de fala para texto compatível. Seus API keys permanecem em macOS Keychain e o áudio vai diretamente para o provedor que você selecionar.
 
-CONSTRUÍDO PARA TRABALHO FOCADO
+Ditado Mac rápido
 • Atalho global configurável
-• Alternar para falar ou segurar para falar
-• Orbe de gravação mínima
-• Entrega da área de transferência
-• Optional histórico de transcrição local
+• Alternar para falar ou apertar para falar
+• Orbe de gravação reativa à voz
+• Entrega automática da área de transferência
+• Histórico de transcrição local Optional
 • Detecção automática de idioma
-• Sem conta Vorb, análise, publicidade ou assinatura
+• Nenhuma conta Vorb, análise, publicidade ou assinatura
 
-Local Whisper requer silício Apple. Provedores on-line e downloads de modelos exigem uma conexão de rede.
+Vorb faz com que a digitação por voz, a transcrição STT e o ditado Whisper pareçam nativos do macOS. Local Whisper requer silício Apple. Provedores on-line e downloads de modelos exigem uma conexão de rede.

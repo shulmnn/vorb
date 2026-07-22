@@ -16,6 +16,27 @@ enum LocalWhisperModelState: Equatable {
     case failed(String)
 }
 
+struct LocalWhisperDownloadProgressGate {
+    private var activeDownloadID: UUID?
+
+    mutating func begin() -> UUID {
+        let downloadID = UUID()
+        activeDownloadID = downloadID
+        return downloadID
+    }
+
+    func accepts(_ downloadID: UUID) -> Bool {
+        activeDownloadID == downloadID
+    }
+
+    @discardableResult
+    mutating func finish(_ downloadID: UUID) -> Bool {
+        guard activeDownloadID == downloadID else { return false }
+        activeDownloadID = nil
+        return true
+    }
+}
+
 enum DictationActivationMode: String, CaseIterable, Identifiable {
     case toggle
     case hold
@@ -162,6 +183,7 @@ final class AppModel: ObservableObject {
     private var targetApplication: NSRunningApplication?
     private var resetTask: Task<Void, Never>?
     private var isRevertingShortcut = false
+    private var localWhisperDownloadProgressGate = LocalWhisperDownloadProgressGate()
 
     private enum DefaultsKey {
         static let provider = "transcriptionProvider"
@@ -431,6 +453,12 @@ final class AppModel: ObservableObject {
             return
         }
 
+        guard !localWhisper.isModelDownloaded(model) else {
+            refreshLocalWhisperModelState()
+            return
+        }
+
+        let downloadID = localWhisperDownloadProgressGate.begin()
         localWhisperModelState = .downloading(0)
         Task { [weak self] in
             guard let self else { return }
@@ -438,6 +466,7 @@ final class AppModel: ObservableObject {
                 try await localWhisper.download(model: model) { [weak self] progress in
                     Task { @MainActor [weak self] in
                         guard let self,
+                              self.localWhisperDownloadProgressGate.accepts(downloadID),
                               self.selectedProvider == .localWhisper,
                               self.activeModel == model else {
                             return
@@ -447,10 +476,16 @@ final class AppModel: ObservableObject {
                         )
                     }
                 }
+                guard localWhisperDownloadProgressGate.finish(downloadID) else {
+                    return
+                }
                 if selectedProvider == .localWhisper, activeModel == model {
                     refreshLocalWhisperModelState()
                 }
             } catch {
+                guard localWhisperDownloadProgressGate.finish(downloadID) else {
+                    return
+                }
                 if selectedProvider == .localWhisper, activeModel == model {
                     localWhisperModelState = .failed(error.localizedDescription)
                     localWhisperCacheSize = localWhisper.cacheSize()

@@ -1,1 +1,1 @@
-Vorb is now available for macOS with local Whisper, bring-your-own-provider transcription, configurable shortcuts, clipboard delivery, and optional history.
+Vorb is now available for macOS with Local Whisper voice-to-text, bring-your-own-provider speech transcription, configurable shortcuts, a voice-reactive orb, clipboard delivery, and optional history.

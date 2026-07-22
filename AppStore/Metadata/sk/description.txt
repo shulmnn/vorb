@@ -1,20 +1,21 @@
-Vorb zmení váš hlas na text pomocou jednej klávesovej skratky.
+Vorb je natívna aplikácia na diktovanie pre Mac, ktorá premieňa reč a hlas na text. Stlačte jednu klávesovú skratku, hovorte prirodzene a premeňte svoj hlasový vstup na čistý text, kdekoľvek píšete.
 
-Stlačte Option–Space pre spustenie a zastavenie, alebo zvoľte podržanie hovoru. Vorb prepíše vašu nahrávku a skopíruje výsledok do schránky.
+Hlasový vstup bez písania
+Stlačením tlačidla Option–Space spustite a zastavte, alebo si vyberte funkciu push-to-talk a počas hovorenia podržte skratku. Vorb prepíše vašu nahrávku, skopíruje výsledok do schránky a udrží váš tok písania v pohybe v poznámkach, správach, dokumentoch, e-mailoch a akejkoľvek inej aplikácii Mac.
 
-SÚKROMNÉ · MIESTNY ŠEPOT
-Prepíšte svoj hlas na text úplne na svojom Mac bez klávesu API. Modely sa stiahnu iba po kliknutí na tlačidlo Stiahnuť model. Môžete tiež importovať existujúci model WhisperKit.
+Súkromné zariadenie na zariadení Whisper
+Spustite rozpoznávanie reči úplne na svojom Mac pomocou Local Whisper – nevyžaduje sa API key. Modely Whisper sa stiahnu iba po kliknutí na tlačidlo Stiahnuť model a namiesto toho môžete importovať existujúci model WhisperKit. Miestny prepis udrží váš zvuk na zariadení.
 
-PRINESTE SI VLASTNÉHO POSKYTOVATEĽA
-Pripojte Groq, OpenAI, Deepgram, Mistral, ElevenLabs, server s vlastným hosťovaním alebo iný kompatibilný koncový bod. Klávesy zostanú v macOS Keychain a zvuk ide priamo k poskytovateľovi, ktorého si vyberiete.
+Prineste si vlastného poskytovateľa STT
+Pripojte Groq, OpenAI, Deepgram, Mistral, ElevenLabs, server Whisper s vlastným hosťovaním alebo iný kompatibilný koncový bod prevodu reči na text. Vaše API key zostanú v macOS Keychain a zvuk ide priamo k poskytovateľovi, ktorého si vyberiete.
 
-POSTAVENÉ PRE sústredenú prácu
+Rýchly diktát Mac
 • Konfigurovateľná globálna skratka
-• Prepínanie hovorenia alebo hovorenia podržaním
-• Minimálny záznam orb
-• Doručovanie schránky
-• Option lokálna história prepisov
+• Prepínanie hovorov alebo hovorov
+• Hlasovo reagujúce nahrávanie orb
+• Automatické doručenie schránky
+• História lokálnych prepisov Optional
 • Automatická detekcia jazyka
-• Žiadny účet Vorb, analytika, reklama alebo predplatné
+• Žiadny účet Vorb, analytika, reklama ani predplatné
 
-Local Whisper vyžaduje kremík Apple. Online poskytovatelia a sťahovanie modelov vyžadujú sieťové pripojenie.
+Vorb robí hlasové písanie, prepis STT a diktovanie Whisper prirodzené pre macOS. Local Whisper vyžaduje kremík Apple. Online poskytovatelia a sťahovanie modelov vyžadujú sieťové pripojenie.
