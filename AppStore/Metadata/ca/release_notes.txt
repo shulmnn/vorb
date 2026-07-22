@@ -1,0 +1,1 @@
+Vorb ja està disponible per a macOS amb Whisper local, transcripció del vostre propi proveïdor, dreceres configurables, lliurament del porta-retalls i historial opcional.

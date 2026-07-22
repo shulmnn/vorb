@@ -1,0 +1,1 @@
+dyktando,mowa,tekst,głos,szept,offline,schowek,notatki,pisanie,audio

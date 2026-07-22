@@ -1,0 +1,1 @@
+Vorb hiện có sẵn cho macOS với Whisper cục bộ, bản ghi do nhà cung cấp của riêng bạn mang đến, các phím tắt có thể định cấu hình, phân phối bảng nhớ tạm và lịch sử tùy chọn.

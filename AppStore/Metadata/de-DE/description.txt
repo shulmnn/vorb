@@ -1,0 +1,20 @@
+Vorb wandelt Ihre Stimme mit einer Tastenkombination in Text um.
+
+Drücken Sie Option–Space zum Starten und Stoppen oder wählen Sie „Halten zum Sprechen“. Vorb transkribiert Ihre Aufnahme und kopiert das Ergebnis in die Zwischenablage.
+
+PRIVAT · LOKALES Flüstern
+Transkribieren Sie Ihre Stimme vollständig auf Ihrem Mac in Text, ohne API-Taste. Modelle werden nur heruntergeladen, wenn Sie auf „Modell herunterladen“ klicken. Sie können auch ein vorhandenes WhisperKit-Modell importieren.
+
+Bringen Sie Ihren eigenen Anbieter mit
+Verbinden Sie Groq, OpenAI, Deepgram, Mistral, ElevenLabs, einen selbstgehosteten Server oder einen anderen kompatiblen Endpunkt. Die Schlüssel bleiben im macOS Keychain und Audio geht direkt an den von Ihnen ausgewählten Anbieter.
+
+Gebaut für konzentriertes Arbeiten
+• Konfigurierbare globale Verknüpfung
+• Umschalten zum Sprechen oder Halten zum Sprechen
+• Minimale Aufnahmekugel
+• Lieferung über die Zwischenablage
+• Optionaler lokaler Transkriptverlauf
+• Automatische Spracherkennung
+• Kein Vorb-Konto, keine Analysen, keine Werbung oder kein Abonnement
+
+Local Whisper erfordert Apple-Silizium. Online-Anbieter und Modell-Downloads erfordern eine Netzwerkverbindung.

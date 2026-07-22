@@ -1,0 +1,1 @@
+sanelu,puhe,teksti,ääni,kuiskaus,offline,leikepöytä,muistiinpanot,kirjoittaminen,ääni

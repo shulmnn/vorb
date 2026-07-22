@@ -1,0 +1,1 @@
+dictée,parole,texte,voix,murmure,hors ligne,presse-papiers,notes,saisie,audio

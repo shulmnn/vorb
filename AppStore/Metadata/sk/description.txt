@@ -1,0 +1,20 @@
+Vorb zmení váš hlas na text pomocou jednej klávesovej skratky.
+
+Stlačením tlačidla Option–Space spustíte a zastavíte hovor, alebo si vyberte podržanie hovoru. Vorb prepíše vašu nahrávku a skopíruje výsledok do schránky.
+
+SÚKROMNÉ · MIESTNY ŠEPOT
+Úplne prepíšte svoj hlas na text na svojom Mac bez kľúča API. Modely sa stiahnu iba po kliknutí na tlačidlo Stiahnuť model. Môžete tiež importovať existujúci model WhisperKit.
+
+PRINESTE SI VLASTNÉHO POSKYTOVATEĽA
+Pripojte Groq, OpenAI, Deepgram, Mistral, ElevenLabs, server s vlastným hosťovaním alebo iný kompatibilný koncový bod. Kľúče zostanú v macOS Keychain a zvuk ide priamo k poskytovateľovi, ktorého si vyberiete.
+
+POSTAVENÉ PRE sústredenú prácu
+• Konfigurovateľná globálna skratka
+• Prepínanie hovorenia alebo hovorenia podržaním
+• Minimálny záznam orb
+• Doručovanie schránky
+• Option história miestnych prepisov
+• Automatická detekcia jazyka
+• Žiadny účet Vorb, analytika, reklama ani predplatné
+
+Local Whisper vyžaduje kremík Apple. Online poskytovatelia a sťahovanie modelov vyžadujú sieťové pripojenie.

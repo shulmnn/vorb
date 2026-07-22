@@ -1,0 +1,20 @@
+Vorb zet uw stem om in tekst met één sneltoets.
+
+Druk op Option–Space om te starten en te stoppen, of kies voor spreekrecht. Vorb transcribeert uw opname en kopieert het resultaat naar het klembord.
+
+PRIVÉ · LOKAAL GEfluister
+Transcribeer uw stem volledig in tekst op uw Mac zonder API-sleutel. Modellen worden alleen gedownload als u op Model downloaden klikt. U kunt ook een bestaand WhisperKit-model importeren.
+
+Neem uw eigen leverancier mee
+Verbind Groq, OpenAI, Deepgram, Mistral, ElevenLabs, een zelf-gehoste server of een ander compatibel eindpunt. Sleutels blijven in macOS Keychain en audio gaat rechtstreeks naar de provider die u selecteert.
+
+GEBOUWD VOOR GECONCENTREERD WERK
+• Configureerbare globale snelkoppeling
+• Schakelen om in te spreken of in de wacht te zetten
+• Minimale opnamebol
+• Klembordlevering
+• Optionale lokale transcriptiegeschiedenis
+• Automatische taaldetectie
+• Geen Vorb-account, analyses, advertenties of abonnement
+
+Voor Local Whisper is Apple-silicium vereist. Voor onlineaanbieders en modeldownloads is een netwerkverbinding vereist.

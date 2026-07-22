@@ -1,0 +1,20 @@
+Vorb converteix la teva veu en text amb una drecera de teclat.
+
+Premeu Option–Space per iniciar i aturar-lo, o bé trieu Mantenir premut per parlar. Vorb transcriu la teva gravació i copia el resultat al porta-retalls.
+
+PRIVAT · XUIXIU LOCAL
+Transcriu la teva veu a text completament al teu Mac sense cap clau API. Els models només es descarreguen quan feu clic a Descarrega el model. També podeu importar un model existent de WhisperKit.
+
+PORTA EL TEU PROPI PROVEÏDOR
+Connecteu Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un servidor autoallotjat o un altre punt final compatible. Les claus es mantenen a macOS Keychain i l'àudio va directament al proveïdor que seleccioneu.
+
+CONSTRUït PER AL TREBALL CENTRAT
+• Drecera global configurable
+• Canviar per parlar o mantenir premut per parlar
+• Orbe d'enregistrament mínim
+• Lliurament de porta-retalls
+• TERME PROTEGIT VORB25 TITULAR Historial de transcripció local
+• Detecció automàtica de l'idioma
+• No hi ha cap compte, anàlisi, publicitat o subscripció de Vorb
+
+Local Whisper requereix silicona d'Apple. Els proveïdors en línia i les descàrregues de models requereixen una connexió de xarxa.

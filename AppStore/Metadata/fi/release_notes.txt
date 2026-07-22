@@ -1,0 +1,1 @@
+Vorb on nyt saatavilla mallille macOS, jossa on paikallinen Whisper, tuo oma palveluntarjoajasi transkriptio, määritettävät pikakuvakkeet, leikepöydän toimitus ja valinnainen historia.

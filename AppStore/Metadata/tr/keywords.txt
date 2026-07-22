@@ -1,0 +1,1 @@
+dikte,konuşma,metin,ses,fısıltı,çevrimdışı,pano,notlar,yazma,ses

@@ -1,0 +1,20 @@
+Vorb gjør stemmen din til tekst med én hurtigtast.
+
+Trykk på Option–Space for å starte og stoppe, eller velg hold for å snakke. Vorb transkriberer opptaket ditt og kopierer resultatet til utklippstavlen.
+
+PRIVAT · LOKAL HVISKE
+Transkriber stemmen din til tekst helt på Mac uten API-tast. Modeller lastes bare ned når du klikker på Last ned modell. Du kan også importere en eksisterende WhisperKit-modell.
+
+TA MED EGEN LEVERANDØR
+Koble til Groq, OpenAI, Deepgram, Mistral, ElevenLabs, en selvvertsserver eller et annet kompatibelt endepunkt. Nøkler forblir i macOS Keychain, og lyden går direkte til leverandøren du velger.
+
+BYGGET FOR FOKUSERT ARBEID
+• Konfigurerbar global snarvei
+• Veksle for å snakke eller hold for å snakke
+• Minimal innspilling orb
+• Levering av utklippstavle
+• Optional lokal transkripsjonshistorikk
+• Automatisk språkdeteksjon
+• Ingen Vorb-konto, analyser, annonsering eller abonnement
+
+Local Whisper krever Apple silisium. Nettleverandører og modellnedlastinger krever en nettverkstilkobling.

@@ -1,0 +1,1 @@
+Vorb jest teraz dostępny dla macOS z lokalnym Whisper, transkrypcją własnego dostawcy, konfigurowalnymi skrótami, dostarczaniem do schowka i opcjonalną historią.

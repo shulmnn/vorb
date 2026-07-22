@@ -1,0 +1,1 @@
+dictation,speech,text,voice,whisper,offline,clipboard,notes,typing,audio

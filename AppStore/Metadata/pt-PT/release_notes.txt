@@ -1,0 +1,1 @@
+Vorb agora está disponível para macOS com Whisper local, transcrição traga seu próprio provedor, atalhos configuráveis, entrega de área de transferência e histórico opcional.

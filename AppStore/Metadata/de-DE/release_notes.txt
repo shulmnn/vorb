@@ -1,0 +1,1 @@
+Vorb ist jetzt für macOS mit lokalem Whisper, Bring-Your-Own-Provider-Transkription, konfigurierbaren Verknüpfungen, Zustellung in der Zwischenablage und optionalem Verlauf verfügbar.

@@ -1,0 +1,1 @@
+narekovanje,govor,besedilo,glas,šepet,brez povezave,odložišče,zapiski,tipkanje,zvok

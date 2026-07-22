@@ -1,0 +1,1 @@
+Vorb is nu beschikbaar voor macOS met lokale Whisper, transcriptie met uw eigen provider, configureerbare snelkoppelingen, klembordlevering en optionele geschiedenis.

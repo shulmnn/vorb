@@ -1,0 +1,1 @@
+Diktat,Sprache,Text,Stimme,Flüstern,offline,Zwischenablage,Notizen,Eingabe,Audio

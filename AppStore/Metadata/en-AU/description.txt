@@ -1,0 +1,20 @@
+Vorb turns your voice into text with one keyboard shortcut.
+
+Press Option–Space to start and stop, or choose hold-to-speak. Vorb transcribes your recording and copies the result to the clipboard.
+
+PRIVATE · LOCAL WHISPER
+Transcribe your voice into text entirely on your Mac with no API key. Models download only when you click Download Model. You can also import an existing WhisperKit model.
+
+BRING YOUR OWN PROVIDER
+Connect Groq, OpenAI, Deepgram, Mistral, ElevenLabs, a self-hosted server, or another compatible endpoint. Keys stay in macOS Keychain, and audio goes directly to the provider you select.
+
+BUILT FOR FOCUSED WORK
+• Configurable global shortcut
+• Toggle-to-speak or hold-to-speak
+• Minimal recording orb
+• Clipboard delivery
+• Optional local transcript history
+• Automatic language detection
+• No Vorb account, analytics, advertising, or subscription
+
+Local Whisper requires Apple silicon. Online providers and model downloads require a network connection.

@@ -1,0 +1,20 @@
+Vorb zamienia Twój głos na tekst za pomocą jednego skrótu klawiaturowego.
+
+Naciśnij Option–Space, aby rozpocząć i zatrzymać, lub wybierz opcję Przytrzymaj, aby mówić. Vorb dokonuje transkrypcji nagrania i kopiuje wynik do schowka.
+
+PRYWATNE · LOKALNY SZept
+Transkrypuj swój głos na tekst w całości na urządzeniu Mac bez klucza API. Modele są pobierane tylko po kliknięciu przycisku Pobierz model. Możesz także zaimportować istniejący model WhisperKit.
+
+ZABIERZ SWOJEGO DOSTAWCĘ
+Połącz Groq, OpenAI, Deepgram, Mistral, ElevenLabs, serwer hostowany samodzielnie lub inny zgodny punkt końcowy. Klucze pozostają w macOS Keychain, a dźwięk jest przesyłany bezpośrednio do wybranego dostawcy.
+
+STWORZONY DO SKUPIONEJ PRACY
+• Konfigurowalny skrót globalny
+• Przełącz, aby mówić lub przytrzymaj, aby mówić
+• Minimalna kula nagrywająca
+• Dostawa schowka
+• Optionalna lokalna historia transkrypcji
+• Automatyczne wykrywanie języka
+• Brak konta Vorb, analiz, reklam i subskrypcji
+
+Local Whisper wymaga silikonu Apple. Dostawcy online i pobieranie modeli wymagają połączenia sieciowego.

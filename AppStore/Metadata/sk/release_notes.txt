@@ -1,0 +1,1 @@
+Vorb je teraz k dispozícii pre macOS s lokálnym Whisper, prepisom podľa vlastného poskytovateľa, konfigurovateľnými skratkami, doručovaním do schránky a voliteľnou históriou.

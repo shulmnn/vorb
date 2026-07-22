@@ -1,0 +1,20 @@
+Vorb menukar suara anda menjadi teks dengan satu pintasan papan kekunci.
+
+Tekan Option–Space untuk memulakan dan berhenti, atau pilih tahan untuk bercakap. VORBPROTECTEDTERM38PACEHOLDER menyalin rakaman anda dan menyalin hasilnya ke papan keratan.
+
+SWASTA · BISIK TEMPATAN
+Transkripsikan suara anda ke dalam teks sepenuhnya pada Mac anda tanpa kunci API. Muat turun model hanya apabila anda mengklik Muat turun Model. Anda juga boleh mengimport model WhisperKit sedia ada.
+
+BAWA PENYEDIA SENDIRI
+Sambungkan Groq, OpenAI, Deepgram, Mistral, ElevenLabs, pelayan yang dihoskan sendiri atau titik tamat lain yang serasi. Kunci kekal dalam macOS Keychain dan audio pergi terus kepada pembekal yang anda pilih.
+
+DIBINA UNTUK KERJA BERFOKUS
+• Pintasan global boleh dikonfigurasikan
+• Togol-untuk-bercakap atau tahan-untuk-bercakap
+• Bola rakaman minimum
+• Penghantaran papan klip
+• VORBPROTECTEDTERM25PEGANG TEMPAT sejarah transkrip tempatan
+• Pengesanan bahasa automatik
+• Tiada akaun, analitis, pengiklanan atau langganan Vorb
+
+Local Whisper memerlukan silikon Apple. Pembekal dalam talian dan muat turun model memerlukan sambungan rangkaian.

@@ -1,0 +1,20 @@
+Vorb pretvara vaš glas u tekst jednim prečacem na tipkovnici.
+
+Pritisnite Option–Space za pokretanje i zaustavljanje ili odaberite držanje za govor. Vorb transkribira vašu snimku i kopira rezultat u međuspremnik.
+
+PRIVATNO · LOKALNO ŠAPATANJE
+Prepišite svoj glas u tekst u cijelosti na svom Mac bez ključa API. Modeli se preuzimaju samo kada kliknete Preuzmi model. Također možete uvesti postojeći model WhisperKit.
+
+POVEDITE VLASTITOG PONUĐAČA
+Povežite Groq, OpenAI, Deepgram, Mistral, ElevenLabs, samodomaćin poslužitelj ili drugu kompatibilnu krajnju točku. Ključevi ostaju u macOS Keychain, a zvuk ide izravno pružatelju kojeg odaberete.
+
+IZRAĐEN ZA FOKUSIRANI RAD
+• Konfigurabilni globalni prečac
+• Prebaci za govor ili zadrži za govor
+• Minimalna kugla za snimanje
+• Isporuka međuspremnika
+• Optionalna lokalna povijest prijepisa
+• Automatsko otkrivanje jezika
+• Nema Vorb računa, analitike, oglašavanja ili pretplate
+
+Local Whisper zahtijeva Apple silicij. Mrežni pružatelji usluga i preuzimanja modela zahtijevaju mrežnu vezu.

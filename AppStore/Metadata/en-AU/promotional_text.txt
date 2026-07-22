@@ -1,0 +1,1 @@
+Press Option–Space, speak, and copy the transcript. Run Whisper locally with no key, or bring your own provider—free, private, and subscription-free.

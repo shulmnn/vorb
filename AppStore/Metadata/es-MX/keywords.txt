@@ -1,0 +1,1 @@
+dictado,habla,texto,voz,susurro,sin conexión,portapapeles,notas,mecanografía,audio

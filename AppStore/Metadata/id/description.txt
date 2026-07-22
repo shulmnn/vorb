@@ -1,0 +1,20 @@
+Vorb mengubah suara Anda menjadi teks dengan satu pintasan keyboard.
+
+Tekan Option–Space untuk memulai dan berhenti, atau pilih tahan untuk berbicara. Vorb mentranskripsikan rekaman Anda dan menyalin hasilnya ke clipboard.
+
+PRIBADI · BERBISIK LOKAL
+Transkripsikan suara Anda menjadi teks seluruhnya di Mac Anda tanpa kunci API. Model diunduh hanya ketika Anda mengklik Unduh Model. Anda juga dapat mengimpor model WhisperKit yang sudah ada.
+
+MEMBAWA PENYEDIA ANDA SENDIRI
+Hubungkan Groq, OpenAI, Deepgram, Mistral, ElevenLabs, server yang dihosting sendiri, atau titik akhir lain yang kompatibel. Kunci tetap berada di macOS Keychain, dan audio langsung dikirim ke penyedia yang Anda pilih.
+
+DIBANGUN UNTUK PEKERJAAN YANG FOKUS
+• Pintasan global yang dapat dikonfigurasi
+• Alihkan untuk berbicara atau tahan untuk berbicara
+• Bola rekaman minimal
+• Pengiriman papan klip
+• Optionriwayat transkrip lokal lokal
+• Deteksi bahasa otomatis
+• Tidak ada akun Vorb, analitik, iklan, atau langganan
+
+Local Whisper memerlukan silikon Apple. Penyedia online dan pengunduhan model memerlukan koneksi jaringan.

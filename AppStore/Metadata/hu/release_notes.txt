@@ -1,0 +1,1 @@
+A Vorb mostantól elérhető a macOS számára a helyi Whisper szolgáltatással, a saját szolgáltató általi átírással, a konfigurálható parancsikonokkal, a vágólap kézbesítésével és az opcionális előzményekkel.

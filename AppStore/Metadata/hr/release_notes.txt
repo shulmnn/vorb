@@ -1,0 +1,1 @@
+Vorb sada je dostupan za macOS s lokalnim Whisper, transkripcijom vlastitog davatelja usluga, konfigurabilnim prečacima, isporukom u međuspremnik i izbornom poviješću.

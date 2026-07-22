@@ -1,0 +1,1 @@
+diktiranje,govor,tekst,glas,šapat,izvan mreže,međuspremnik,bilješke,tipkanje,audio

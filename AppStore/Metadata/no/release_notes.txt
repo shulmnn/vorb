@@ -1,0 +1,1 @@
+Vorb er nå tilgjengelig for macOS med lokal Whisper, ta med-din-egen-leverandør-transkripsjon, konfigurerbare snarveier, utklippstavlelevering og valgfri historikk.

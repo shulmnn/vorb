@@ -1,0 +1,20 @@
+Vorb muuttaa äänesi tekstiksi yhdellä pikanäppäimellä.
+
+Paina Option–Space aloittaaksesi ja lopettaaksesi tai valitse pidä puhuaksesi. Vorb litteroi tallenteen ja kopioi tuloksen leikepöydälle.
+
+YKSITYINEN · PAIKALLINEN KUISSAUS
+Literoi äänesi kokonaan tekstiksi Mac-laitteeseen ilman API-näppäintä. Mallit ladataan vain, kun napsautat Lataa malli. Voit myös tuoda olemassa olevan WhisperKit-mallin.
+
+TUO OMA TARJOAJASI
+Yhdistä Groq, OpenAI, Deepgram, Mistral, ElevenLabs, itseisännöity päätepalvelin tai muu yhteensopiva päätepiste. Avaimet pysyvät muodossa macOS Keychain, ja ääni siirtyy suoraan valitsemallesi palveluntarjoajalle.
+
+RAKENNETTU KESKETTYNYTTÄ TYÖTÄ VARTEN
+• Konfiguroitava yleinen pikakuvake
+• Vaihda puheeksi tai pidä puheeksi
+• Minimaalinen tallennuspallo
+• Leikepöydän toimitus
+• Option Paikallinen transkriptiohistoria
+• Automaattinen kielentunnistus
+• Ei Vorb-tiliä, analytiikkaa, mainontaa tai tilausta
+
+Local Whisper vaatii Applen piitä. Verkkopalveluntarjoajat ja mallilataukset vaativat verkkoyhteyden.

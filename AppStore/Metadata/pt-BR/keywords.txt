@@ -1,0 +1,1 @@
+ditado,discurso,texto,voz,sussurro,off-line,área de transferência,notas,digitação,áudio
