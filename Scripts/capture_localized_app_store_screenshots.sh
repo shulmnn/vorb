@@ -11,7 +11,7 @@ container_root="$HOME/Library/Containers/$bundle_id/Data/Library"
 container_prefs="$container_root/Preferences/$bundle_id.plist"
 history_path="$container_root/Application Support/Vorb/transcription-history.json"
 
-locales=(de-DE fr-FR es-ES pt-BR it ja ko zh-Hans ru)
+locales=(en-US de-DE fr-FR es-ES pt-BR it ja ko zh-Hans ru)
 
 if [[ ! -x "$app_path/Contents/MacOS/Vorb" ]]; then
     echo "Build the App Store app first: ./Scripts/package_app_store.sh" >&2
@@ -155,7 +155,11 @@ APPLESCRIPT
 for locale in $locales; do
     echo "Capturing $locale"
     quit_vorb
-    mkdir -p "${history_path:h}" "$raw_root/$locale"
+    locale_raw_root="$raw_root/$locale"
+    if [[ "$locale" == "en-US" ]]; then
+        locale_raw_root="$raw_root"
+    fi
+    mkdir -p "${history_path:h}" "$locale_raw_root"
     cp "$fixture_root/$locale.json" "$history_path"
 
     defaults write "$bundle_id" transcriptionProvider -string localWhisper
@@ -174,19 +178,19 @@ for locale in $locales; do
 
     ensure_settings
     rect="$(settings_rect)"
-    screencapture -x -R"$rect" "$raw_root/$locale/settings-local.png"
+    screencapture -x -R"$rect" "$locale_raw_root/settings-local.png"
 
     ensure_settings
     select_custom_provider >/dev/null
     sleep 1.2
     rect="$(settings_rect)"
-    screencapture -x -R"$rect" "$raw_root/$locale/settings-provider.png"
+    screencapture -x -R"$rect" "$locale_raw_root/settings-provider.png"
 
     ensure_settings
     select_tab 2 >/dev/null
     sleep 0.8
     rect="$(settings_rect)"
-    screencapture -x -R"$rect" "$raw_root/$locale/settings-shortcut.png"
+    screencapture -x -R"$rect" "$locale_raw_root/settings-shortcut.png"
 
     ensure_settings
     select_tab 3 >/dev/null
@@ -194,7 +198,7 @@ for locale in $locales; do
     open_history >/dev/null
     sleep 0.8
     rect="$(history_rect)"
-    screencapture -x -R"$rect" "$raw_root/$locale/history.png"
+    screencapture -x -R"$rect" "$locale_raw_root/history.png"
 done
 
 restore_user_state

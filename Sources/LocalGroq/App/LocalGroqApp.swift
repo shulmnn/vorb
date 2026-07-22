@@ -115,7 +115,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private func showSettingsWindow() {
         NSApp.activate()
         settingsWindowController?.showWindow(nil)
-        settingsWindowController?.window?.makeKeyAndOrderFront(nil)
+        guard let window = settingsWindowController?.window else { return }
+        window.makeKeyAndOrderFront(nil)
+        DispatchQueue.main.async { [weak window] in
+            window?.makeFirstResponder(nil)
+        }
     }
 
     private func showHistoryWindow() {

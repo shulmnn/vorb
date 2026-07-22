@@ -8,6 +8,13 @@ private enum SettingsTab: Hashable {
     case about
 }
 
+private enum SettingsField: Hashable {
+    case endpoint
+    case apiKey
+    case model
+    case language
+}
+
 struct SettingsView: View {
     @ObservedObject var model: AppModel
     @AppStorage("showMenuBarIcon") private var showMenuBarIcon = true
@@ -16,6 +23,7 @@ struct SettingsView: View {
     @State private var autoSaveTask: Task<Void, Never>?
     @State private var isConfirmingModelRemoval = false
     @State private var isConfirmingCacheClear = false
+    @FocusState private var focusedField: SettingsField?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -45,7 +53,19 @@ struct SettingsView: View {
                 .frame(height: 36)
                 .background(.bar)
         }
-        .background(Color(nsColor: .windowBackgroundColor))
+        .background {
+            Color(nsColor: .windowBackgroundColor)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    dismissTextFieldFocus()
+                }
+        }
+        .onExitCommand {
+            dismissTextFieldFocus()
+        }
+        .onChange(of: selectedTab) { _, _ in
+            dismissTextFieldFocus()
+        }
         .onChange(of: settingsSnapshot) { _, _ in
             scheduleAutoSave()
         }
@@ -126,6 +146,7 @@ struct SettingsView: View {
                     TextField("Auto-detect", text: $model.language)
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 160)
+                        .focused($focusedField, equals: .language)
                 }
 
                 Text("Leave blank to auto-detect, or enter an ISO-639-1 code such as en, de, fr, or ru.")
@@ -145,6 +166,7 @@ struct SettingsView: View {
                 )
                 .textFieldStyle(.roundedBorder)
                 .frame(width: 330)
+                .focused($focusedField, equals: .endpoint)
             }
 
             if let endpointHelp = model.selectedProvider.endpointHelp {
@@ -169,8 +191,10 @@ struct SettingsView: View {
                 Group {
                     if keyIsVisible {
                         TextField(model.selectedProvider.keyPlaceholder, text: $model.apiKey)
+                            .focused($focusedField, equals: .apiKey)
                     } else {
                         SecureField(model.selectedProvider.keyPlaceholder, text: $model.apiKey)
+                            .focused($focusedField, equals: .apiKey)
                     }
                 }
                 .textFieldStyle(.roundedBorder)
@@ -214,6 +238,7 @@ struct SettingsView: View {
                 TextField(model.selectedProvider.defaultModel, text: $model.modelName)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 280)
+                    .focused($focusedField, equals: .model)
 
                 if !model.selectedProvider.recommendedModels.isEmpty {
                     Menu {
@@ -520,6 +545,11 @@ struct SettingsView: View {
             guard !Task.isCancelled else { return }
             model.saveSettings()
         }
+    }
+
+    private func dismissTextFieldFocus() {
+        focusedField = nil
+        NSApp.keyWindow?.makeFirstResponder(nil)
     }
 
 }
