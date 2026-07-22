@@ -9,6 +9,10 @@ DerivedData/
 Scripts/__pycache__/
 *.pyc
 
+# Regenerated release artwork; source copy and capture scripts are tracked.
+Design/AppStoreScreenshots/Localized/
+Design/AppStoreScreenshots/Raw/*/
+
 # Never commit local credentials.
 .env
 .env.*

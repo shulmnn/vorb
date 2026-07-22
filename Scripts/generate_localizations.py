@@ -73,6 +73,114 @@ LOCALES = {
     "vi": "vi",
 }
 
+# Screenshot-facing release copy receives a human pass. These overrides also
+# improve the corresponding in-app navigation and history UI.
+MANUAL_OVERRIDES = {
+    "de-DE": {
+        "Vorb Settings": "Vorb-Einstellungen",
+        "Vorb History": "Vorb-Verlauf",
+        "Shortcut": "Kurzbefehl",
+        "Behavior": "Verhalten",
+        "About": "Info",
+        "Private · no API key": "Privat · kein API-Schlüssel",
+        "Transcription History": "Transkriptionsverlauf",
+        "Stored locally on this Mac": "Lokal auf diesem Mac gespeichert",
+        "Clear…": "Löschen…",
+    },
+    "fr-FR": {
+        "Vorb Settings": "Réglages de Vorb",
+        "Vorb History": "Historique de Vorb",
+        "Shortcut": "Raccourci",
+        "Behavior": "Comportement",
+        "About": "À propos",
+        "Private · no API key": "Privé · aucune clé API",
+        "Transcription History": "Historique des transcriptions",
+        "Stored locally on this Mac": "Stocké localement sur ce Mac",
+        "Clear…": "Effacer…",
+    },
+    "es-ES": {
+        "Vorb Settings": "Ajustes de Vorb",
+        "Vorb History": "Historial de Vorb",
+        "Shortcut": "Atajo",
+        "Behavior": "General",
+        "About": "Info",
+        "Private · no API key": "Privado · sin clave API",
+        "Transcription History": "Historial de transcripciones",
+        "Stored locally on this Mac": "Guardado localmente en este Mac",
+        "Clear…": "Borrar…",
+    },
+    "pt-BR": {
+        "Vorb Settings": "Ajustes do Vorb",
+        "Vorb History": "Histórico do Vorb",
+        "Shortcut": "Atalho",
+        "Behavior": "Geral",
+        "About": "Sobre",
+        "Private · no API key": "Privado · sem chave de API",
+        "Transcription History": "Histórico de transcrições",
+        "Stored locally on this Mac": "Armazenado localmente neste Mac",
+        "Clear…": "Limpar…",
+    },
+    "it": {
+        "Vorb Settings": "Impostazioni di Vorb",
+        "Vorb History": "Cronologia di Vorb",
+        "Shortcut": "Tasti",
+        "Behavior": "Generale",
+        "About": "Info",
+        "Private · no API key": "Privato · nessuna chiave API",
+        "Transcription History": "Cronologia trascrizioni",
+        "Stored locally on this Mac": "Salvata localmente su questo Mac",
+        "Clear…": "Cancella…",
+    },
+    "ja": {
+        "Vorb Settings": "Vorb設定",
+        "Vorb History": "Vorb履歴",
+        "Transcription": "文字起こし",
+        "Shortcut": "ショートカット",
+        "Behavior": "動作",
+        "About": "情報",
+        "Private · no API key": "プライベート · APIキー不要",
+        "Transcription History": "文字起こし履歴",
+        "Stored locally on this Mac": "このMacにローカル保存",
+        "Clear…": "消去…",
+    },
+    "ko": {
+        "Vorb Settings": "Vorb 설정",
+        "Vorb History": "Vorb 기록",
+        "Transcription": "받아쓰기",
+        "Shortcut": "단축키",
+        "Behavior": "동작",
+        "About": "정보",
+        "Private · no API key": "비공개 · API 키 불필요",
+        "Transcription History": "받아쓰기 기록",
+        "Stored locally on this Mac": "이 Mac에 로컬로 저장됨",
+        "Clear…": "지우기…",
+    },
+    "zh-Hans": {
+        "Vorb Settings": "Vorb 设置",
+        "Vorb History": "Vorb 历史记录",
+        "Transcription": "转写",
+        "Shortcut": "快捷键",
+        "Behavior": "行为",
+        "About": "关于",
+        "Private · no API key": "私密 · 无需 API 密钥",
+        "Transcription History": "转写历史",
+        "Stored locally on this Mac": "本地存储在这台 Mac 上",
+        "Clear…": "清除…",
+    },
+    "ru": {
+        "Vorb Settings": "Настройки Vorb",
+        "Vorb History": "История Vorb",
+        "Transcription": "Речь",
+        "Shortcut": "Клавиши",
+        "Behavior": "Режим",
+        "About": "Инфо",
+        "Private · no API key": "Приватно · без API-ключа",
+        "Transcription History": "История расшифровок",
+        "Stored locally on this Mac": "Хранится локально на этом Mac",
+        "Clear…": "Очистить…",
+    },
+}
+
 MODEL_DETAIL_STRINGS = [
     "Smallest and fastest; best for quick English dictation",
     "Lightweight multilingual transcription",
@@ -117,6 +225,8 @@ MODEL_DETAIL_STRINGS = [
 
 UI_STRINGS = [
     "Vorb",
+    "Vorb Settings",
+    "Vorb History",
     "Transcription",
     "Shortcut",
     "Behavior",
@@ -327,7 +437,7 @@ METADATA_STRINGS = [
     LOCAL_NETWORK_DESCRIPTION,
 ]
 
-CACHE_VERSION = 2
+CACHE_VERSION = 3
 
 # Product, platform, protocol, and provider names must never be translated as
 # ordinary words (for example, Whisper must not become “chuchotement”).
@@ -390,10 +500,13 @@ PROTECTED_TERMS = sorted(
 )
 
 PLACEHOLDERS = {
-    "%lld": "VORBLONGLONGPLACEHOLDER",
-    "%@": "VORBOBJECTPLACEHOLDER",
+    # Bracketed numeric tokens survive Google Translate across every launch
+    # language, including Arabic and CJK. Word-like placeholder names were
+    # themselves translated in some locales and could not be restored.
+    "%lld": "⟦900⟧",
+    "%@": "⟦901⟧",
     **{
-        term: f"VORBPROTECTEDTERM{index}PLACEHOLDER"
+        term: f"⟦{index:03d}⟧"
         for index, term in enumerate(PROTECTED_TERMS)
     },
 }
@@ -576,6 +689,7 @@ def main() -> None:
         locale, target = item
         print(f"Localizing {locale} ({target})", flush=True)
         translations = translate_all(values, target, dict(cache.get(locale, {})))
+        translations.update(MANUAL_OVERRIDES.get(locale, {}))
         return locale, translations
 
     with ThreadPoolExecutor(max_workers=4) as executor:

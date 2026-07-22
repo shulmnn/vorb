@@ -1,12 +1,12 @@
-Vorb 通过一个键盘快捷键将您的语音转换为文本。
+Vorb 使用一个键盘快捷键将您的语音转换为文本。
 
-按 Option–Space 开始和停止，或选择保持讲话。 Vorb 转录您的录音并将结果复制到剪贴板。
+按Option–Space开始和停止，或选择保持讲话。 Vorb 转录您的录音并将结果复制到剪贴板。
 
 私人·本地耳语
-将您的语音完全转录为 Mac 上的文本，无需 API 键。仅当您单击“下载模型”时才会下载模型。您还可以导入现有的 WhisperKit 模型。
+完全在 Mac 上将您的语音转录为文本，无需 API 键。仅当您单击“下载模型”时才会下载模型。您还可以导入现有的 WhisperKit 模型。
 
 带上您自己的提供商
-连接 Groq、OpenAI、Deepgram、Mistral、ElevenLabs、自托管服务器或其他兼容端点。密钥保留在 macOS Keychain 中，音频直接发送到您选择的提供商。
+连接 Groq、OpenAI、Deepgram、Mistral、ElevenLabs、自托管服务器或其他兼容端点。密钥保留在macOSKeychain，音频直接发送到您选择的提供商。
 
 专为专注工作而打造
 • 可配置的全局快捷方式
@@ -15,6 +15,6 @@ Vorb 通过一个键盘快捷键将您的语音转换为文本。
 • 剪贴板传送
 • Optional 本地成绩单历史记录
 • 自动语言检测
-• 没有 Vorb 帐户、分析、广告或订阅
+• 无Vorb 帐户、分析、广告或订阅
 
 Local Whisper 需要 Apple 芯片。在线提供程序和模型下载需要网络连接。

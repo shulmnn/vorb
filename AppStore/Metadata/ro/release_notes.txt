@@ -1,1 +1,1 @@
-Vorb este acum disponibil pentru macOS cu Whisper local, transcrierea cu propriul furnizor, comenzi rapide configurabile, livrare în clipboard și istoric opțional.
+Vorb este acum disponibil pentru macOS cu Whisper local, transcriere cu propriul furnizor, comenzi rapide configurabile, livrare clipboard și istoric opțional.

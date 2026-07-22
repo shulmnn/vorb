@@ -1,20 +1,20 @@
-A Vorb egyetlen billentyűkombinációval szöveggé varázsolja a hangját.
+A Vorb egyetlen billentyűkóddal szöveggé változtatja a hangját.
 
-Nyomja meg a Option–Space gombot az indításhoz és a leállításhoz, vagy válassza a tartsa a felolvasást funkciót. A Vorb átírja a felvételt, és az eredményt a vágólapra másolja.
+Nyomja meg a Option–Space gombot az indításhoz és a leállításhoz, vagy válassza a „tartsa a felolvasáshoz” funkciót. A Vorb átírja a felvételt, és az eredményt a vágólapra másolja.
 
 PRIVÁT · HELYI SUTTOGÁS
-Írja át hangját teljes egészében szöveggé a Mac eszközön API kulcs nélkül. A modellek csak akkor töltődnek le, ha a Modell letöltése gombra kattint. Meglévő WhisperKit modellt is importálhat.
+Írja át a hangját teljes egészében szöveggé a Mac számon API billentyű nélkül. A modellek csak akkor töltődnek le, ha a Modell letöltése gombra kattint. Meglévő WhisperKit modellt is importálhat.
 
 HOZZÁ EL SAJÁT SZOLGÁLTATÓT
-Csatlakoztasson Groq, OpenAI, Deepgram, Mistral, ElevenLabs, saját üzemeltetésű végpontot vagy más kompatibilis végpontot. A kulcsok a macOS Keychain mezőben maradnak, a hang pedig közvetlenül a kiválasztott szolgáltatóhoz kerül.
+Csatlakoztassa a Groq, OpenAI, Deepgram, Mistral, ElevenLabs számot, egy önálló szervert vagy egy másik kompatibilis végpontot. A billentyűk a macOS Keychain számban maradnak, a hang pedig közvetlenül a kiválasztott szolgáltatóhoz érkezik.
 
 ÖSSZPONTOSÍTOTT MUNKÁRA ÉPÍTETT
 • Konfigurálható globális parancsikon
 • Váltás a felolvasáshoz vagy a tartsa felolvasáshoz
 • Minimális felvételi orb
 • Vágólap kiszállítás
-• Option Helyi átírási előzmények
+• Optional helyi átírási előzmények
 • Automatikus nyelvérzékelés
 • Nincs Vorb fiók, elemzés, hirdetés vagy előfizetés
 
-A Local Whisper használatához Apple szilícium szükséges. Az online szolgáltatóknak és a modellletöltéseknek hálózati kapcsolatra van szükségük.
+A Local Whisper Apple szilikont igényel. Az online szolgáltatóknak és a modellletöltéseknek hálózati kapcsolatra van szükségük.

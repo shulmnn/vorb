@@ -1,0 +1,5 @@
+[
+  {"id":"11111111-1111-4111-8111-111111111111","text":"Fasse die Launch-Notizen als kurze Checkliste zusammen und sende den finalen Entwurf vor dem Mittagessen.","createdAt":806431320,"provider":"Local Whisper","model":"Small"},
+  {"id":"22222222-2222-4222-8222-222222222222","text":"Die schnellste Oberfläche erscheint genau dann, wenn du sie brauchst, und verschwindet, sobald du fertig bist.","createdAt":806427840,"provider":"Groq","model":"Whisper Large V3 Turbo"},
+  {"id":"33333333-3333-4333-8333-333333333333","text":"Prüfe vor der Veröffentlichung noch die Datenschutzseite, den Support-Link, die Screenshots und die Review-Hinweise.","createdAt":806345340,"provider":"OpenAI","model":"GPT-4o Mini Transcribe"}
+]

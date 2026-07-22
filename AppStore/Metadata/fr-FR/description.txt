@@ -1,20 +1,20 @@
 Vorb transforme votre voix en texte avec un seul raccourci clavier.
 
-Appuyez sur Option–Space pour démarrer et arrêter, ou choisissez hold-to-speak. Vorb transcrit votre enregistrement et copie le résultat dans le presse-papiers.
+Appuyez sur Option–Space pour démarrer et arrêter, ou choisissez tenir pour parler. Vorb transcrit votre enregistrement et copie le résultat dans le presse-papiers.
 
 PRIVÉ · CHUCHOTEMENT LOCAL
-Transcrivez entièrement votre voix en texte sur votre Mac sans clé API. Les modèles sont téléchargés uniquement lorsque vous cliquez sur Télécharger le modèle. Vous pouvez également importer un modèle WhisperKit existant.
+Transcrivez entièrement votre voix en texte sur votre Mac sans la touche API. Les modèles sont téléchargés uniquement lorsque vous cliquez sur Télécharger le modèle. Vous pouvez également importer un modèle WhisperKit existant.
 
 APPORTEZ VOTRE PROPRE FOURNISSEUR
-Connectez Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un serveur auto-hébergé ou un autre point de terminaison compatible. Les clés restent dans macOS Keychain et l'audio est envoyé directement au fournisseur que vous sélectionnez.
+Connectez Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un serveur auto-hébergé ou un autre point de terminaison compatible. Les clés restent dans macOS Keychain et l'audio va directement au fournisseur que vous sélectionnez.
 
 CONÇU POUR UN TRAVAIL CONCENTRÉ
 • Raccourci global configurable
 • Basculer pour parler ou maintenir pour parler
 • Orbe d'enregistrement minimal
 • Livraison du presse-papiers
-• Optional historique des transcriptions locales
+• Optionhistorique des transcriptions locales
 • Détection automatique de la langue
-• Pas de compte Vorb, d'analyse, de publicité ou d'abonnement.
+• Pas de compte Vorb, d'analyse, de publicité ou d'abonnement
 
 Local Whisper nécessite du silicium Apple. Les fournisseurs en ligne et les téléchargements de modèles nécessitent une connexion réseau.

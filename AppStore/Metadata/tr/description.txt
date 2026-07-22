@@ -1,12 +1,12 @@
-Vorb, tek bir klavye kısayoluyla sesinizi metne dönüştürür.
+Vorb tek bir klavye kısayoluyla sesinizi metne dönüştürür.
 
 Başlatmak ve durdurmak için Option–Space tuşuna basın veya konuşmayı basılı tutmayı seçin. Vorb kaydınızı yazıya döker ve sonucu panoya kopyalar.
 
 ÖZEL · YEREL FISILTI
-API anahtarı olmadan sesinizi tamamen Mac cihazınızda metne dönüştürün. Modeller yalnızca Modeli İndir'e tıkladığınızda indirilir. Ayrıca mevcut bir WhisperKit modelini de içe aktarabilirsiniz.
+API tuşuna gerek kalmadan Mac cihazınızda sesinizi tamamen metne dönüştürün. Modeller yalnızca Modeli İndir'e tıkladığınızda indirilir. Ayrıca mevcut bir WhisperKit modelini de içe aktarabilirsiniz.
 
 KENDİ SAĞLAYICINI GETİR
-Groq, OpenAI, Deepgram, Mistral, ElevenLabs, şirket içinde barındırılan bir sunucu veya başka bir uyumlu uç noktayı bağlayın. Anahtarlar macOS Keychain'da kalır ve ses doğrudan seçtiğiniz sağlayıcıya gider.
+Groq, OpenAI, Deepgram, Mistral, ElevenLabs'yi, şirket içinde barındırılan bir sunucuyu veya başka bir uyumlu uç noktayı bağlayın. Anahtarlar macOS Keychain'de kalır ve ses doğrudan seçtiğiniz sağlayıcıya gider.
 
 ODAKLI ÇALIŞMA İÇİN TASARLANDI
 • Yapılandırılabilir genel kısayol
@@ -15,6 +15,6 @@ ODAKLI ÇALIŞMA İÇİN TASARLANDI
 • Pano teslimatı
 • Optional yerel transkript geçmişi
 • Otomatik dil algılama
-• Vorb hesabı, analiz, reklam veya abonelik yok
+• Vorb hesap, analiz, reklam veya abonelik yok
 
-Local Whisper, Apple silikonunu gerektirir. Çevrimiçi sağlayıcılar ve model indirmeleri bir ağ bağlantısı gerektirir.
+Local Whisper Apple silikon gerektirir. Çevrimiçi sağlayıcılar ve model indirmeleri bir ağ bağlantısı gerektirir.

@@ -1,1 +1,1 @@
-Vorb artık yerel Whisper, kendi sağlayıcınızı getirin transkripsiyon, yapılandırılabilir kısayollar, pano teslimi ve isteğe bağlı geçmiş ile macOS için kullanılabilir.
+Vorb artık yerel Whisper, kendi sağlayıcınızı getirin transkripsiyonu, yapılandırılabilir kısayollar, pano dağıtımı ve isteğe bağlı geçmiş ile macOS için kullanılabilir.

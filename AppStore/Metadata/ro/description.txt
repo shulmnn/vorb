@@ -1,9 +1,9 @@
-Vorb vă transformă vocea în text cu o singură comandă rapidă de la tastatură.
+Vorb vă transformă vocea în text cu o comandă rapidă de la tastatură.
 
-Apăsați Option–Space pentru a porni și opri sau alegeți hold-to-vorb. Vorb transcrie înregistrarea și copiază rezultatul în clipboard.
+Apăsați Option–Space pentru a porni și opri, sau alegeți țineți apăsat pentru a vorbi. Vorb transcrie înregistrarea și copiază rezultatul în clipboard.
 
 PRIVAT · ȘOPTĂ LOCALĂ
-Transcrieți-vă vocea în text în întregime pe Mac fără cheie API. Modelele se descarcă numai când dați clic pe Descărcare model. De asemenea, puteți importa un model existent WhisperKit.
+Transcrie-ți vocea în text în întregime pe Mac, fără tasta API. Modelele se descarcă numai când dați clic pe Descărcare model. De asemenea, puteți importa un model existent WhisperKit.
 
 Aduceți-vă PROPRIUL FURNIZOR
 Conectați Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un server auto-găzduit sau un alt punct final compatibil. Cheile rămân în macOS Keychain, iar sunetul ajunge direct la furnizorul pe care îl selectați.
@@ -13,7 +13,7 @@ CONSTRUIT PENTRU MUNCĂ FOCALIZATĂ
 • Comutați pentru a vorbi sau țineți apăsat pentru a vorbi
 • Sfera de înregistrare minimă
 • Livrare clipboard
-• OptionIstoria locală a transcripției
+• Optional istoric de transcriere locală
 • Detectare automată a limbii
 • Fără cont Vorb, analize, publicitate sau abonament
 

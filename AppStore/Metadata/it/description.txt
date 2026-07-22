@@ -1,12 +1,12 @@
-VORBPROTECTEDTERM38PLACEholder trasforma la tua voce in testo con una scorciatoia da tastiera.
+Vorb trasforma la tua voce in testo con una scorciatoia da tastiera.
 
-Premi Option–Space per avviare e interrompere oppure scegli Trattieni per parlare. VORBPROTECTEDTERM38PLACEholder trascrive la tua registrazione e copia il risultato negli appunti.
+Premi Option–Space per avviare e interrompere oppure scegli Trattieni per parlare. Vorb trascrive la tua registrazione e copia il risultato negli appunti.
 
 PRIVATO · SUSSURO LOCALE
-Trascrivi la tua voce in testo interamente sul tuo VORBPROTECTEDTERM39PLACEholder senza chiave VORBPROTECTEDTERM40PLACEholder. I modelli vengono scaricati solo quando si fa clic su Scarica modello. Puoi anche importare un modello VORBPROTECTEDTERM12PLACEholder esistente.
+Trascrivi la tua voce in testo interamente sul tuo Mac senza il tasto API. I modelli vengono scaricati solo quando si fa clic su Scarica modello. Puoi anche importare un modello WhisperKit esistente.
 
 PORTA IL TUO FORNITORE
-Connetti VORBPROTECTEDTERM37PLACEholder, VORBPROTECTEDTERM29PLACEholder, VORBPROTECTEDTERM16PLACEholder, VORBPROTECTEDTERM22PLACEholder, VORBPROTECTEDTERM9PLACEholder, un server self-hosted o un altro endpoint compatibile. Le chiavi rimangono in VORBPROTECTEDTERM34PLACEholder VORBPROTECTEDTERM17PLACEholder e l'audio va direttamente al provider selezionato.
+Connetti Groq, OpenAI, Deepgram, Mistral, ElevenLabs, un server self-hosted o un altro endpoint compatibile. Le chiavi rimangono in macOS Keychain e l'audio va direttamente al provider selezionato.
 
 COSTRUITO PER IL LAVORO CONCENTRATO
 • Scorciatoia globale configurabile
@@ -15,6 +15,6 @@ COSTRUITO PER IL LAVORO CONCENTRATO
 • Consegna degli appunti
 • Optional storia della trascrizione locale
 • Rilevamento automatico della lingua
-• Nessun account, analisi, pubblicità o abbonamento VORBPROTECTEDTERM38PLACEholder
+• Nessun account Vorb, analisi, pubblicità o abbonamento
 
-VORBPROTECTEDTERM5PLACEholder richiede il silicio Apple. I provider online e i download di modelli richiedono una connessione di rete.
+Local Whisper richiede silicio Apple. I provider online e i download di modelli richiedono una connessione di rete.

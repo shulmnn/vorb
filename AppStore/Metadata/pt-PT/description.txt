@@ -3,7 +3,7 @@ Vorb transforma sua voz em texto com um atalho de teclado.
 Pressione Option–Space para iniciar e parar ou escolha segurar para falar. Vorb transcreve sua gravação e copia o resultado para a área de transferência.
 
 PRIVADO · SUSSURRO LOCAL
-Transcreva sua voz em texto inteiramente em seu Mac sem a chave API. Os modelos são baixados somente quando você clica em Baixar modelo. Também é possível importar um modelo WhisperKit existente.
+Transcreva sua voz em texto inteiramente em seu Mac sem a tecla API. Os modelos são baixados somente quando você clica em Baixar modelo. Você também pode importar um modelo WhisperKit existente.
 
 TRAGA SEU PRÓPRIO FORNECEDOR
 Conecte Groq, OpenAI, Deepgram, Mistral, ElevenLabs, um servidor auto-hospedado ou outro endpoint compatível. As chaves permanecem em macOS Keychain e o áudio vai diretamente para o provedor que você selecionar.
@@ -15,6 +15,6 @@ CONSTRUÍDO PARA TRABALHO FOCADO
 • Entrega da área de transferência
 • Optional histórico de transcrição local
 • Detecção automática de idioma
-• Nenhuma conta, análise, publicidade ou assinatura Vorb
+• Sem conta Vorb, análise, publicidade ou assinatura
 
 Local Whisper requer silício Apple. Provedores on-line e downloads de modelos exigem uma conexão de rede.

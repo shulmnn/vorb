@@ -56,7 +56,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             backing: .buffered,
             defer: false
         )
-        settingsWindow.title = "Vorb Settings"
+        settingsWindow.title = localized("Vorb Settings")
         settingsWindow.contentViewController = settingsHostingController
         settingsWindow.setContentSize(NSSize(width: 600, height: 520))
         settingsWindow.contentMinSize = NSSize(width: 600, height: 520)
@@ -74,7 +74,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             backing: .buffered,
             defer: false
         )
-        historyWindow.title = "Vorb History"
+        historyWindow.title = localized("Vorb History")
         historyWindow.contentViewController = historyHostingController
         historyWindow.contentMinSize = NSSize(width: 620, height: 500)
         historyWindow.isReleasedWhenClosed = false

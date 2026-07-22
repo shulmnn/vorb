@@ -1,24 +1,66 @@
 #!/usr/bin/env python3
 """Compose Vorb App Store screenshots from contextual art and native captures."""
 
+import argparse
+
 from pathlib import Path
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
+from app_store_screenshot_localizations import LOCALIZATIONS, LOCALE_ORDER
+
 
 ROOT = Path(__file__).resolve().parent.parent
-RAW = ROOT / "Design" / "AppStoreScreenshots" / "Raw"
+RAW_ROOT = ROOT / "Design" / "AppStoreScreenshots" / "Raw"
 GENERATED = ROOT / "Design" / "AppStoreScreenshots" / "GeneratedReferences"
-FINAL = ROOT / "Design" / "AppStoreScreenshots" / "Final"
+FINAL_ROOT = ROOT / "Design" / "AppStoreScreenshots" / "Final"
+LOCALIZED_ROOT = ROOT / "Design" / "AppStoreScreenshots" / "Localized"
 WIDTH, HEIGHT = 2880, 1800
-FONT_PATH = "/System/Library/Fonts/SFNS.ttf"
+ACTIVE_LOCALE = "en-US"
+COPY = LOCALIZATIONS[ACTIVE_LOCALE]
+RAW = RAW_ROOT
+FINAL = FINAL_ROOT
 
 
 def font(size: int, weight: str = "Regular") -> ImageFont.FreeTypeFont:
-    value = ImageFont.truetype(FONT_PATH, size)
+    if ACTIVE_LOCALE == "ja":
+        weight_number = 6 if weight in {"Semibold", "Bold"} else 3
+        path = f"/System/Library/Fonts/ヒラギノ角ゴシック W{weight_number}.ttc"
+        return ImageFont.truetype(path, size)
+    if ACTIVE_LOCALE == "ko":
+        index = {"Regular": 0, "Medium": 2, "Semibold": 4, "Bold": 6}.get(weight, 0)
+        return ImageFont.truetype(
+            "/System/Library/Fonts/AppleSDGothicNeo.ttc",
+            size,
+            index=index,
+        )
+    if ACTIVE_LOCALE == "zh-Hans":
+        index = 2 if weight in {"Semibold", "Bold"} else 0
+        return ImageFont.truetype(
+            "/System/Library/Fonts/Hiragino Sans GB.ttc",
+            size,
+            index=index,
+        )
+
+    value = ImageFont.truetype("/System/Library/Fonts/SFNS.ttf", size)
     value.set_variation_by_name(weight)
     return value
+
+
+def fitted_font(
+    text: str,
+    initial_size: int,
+    max_width: int,
+    weight: str = "Medium",
+    minimum_size: int = 32,
+) -> ImageFont.FreeTypeFont:
+    draw = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    for size in range(initial_size, minimum_size - 1, -2):
+        candidate = font(size, weight)
+        if max(draw.textlength(line, font=candidate) for line in text.split("\n")) <= max_width:
+            return candidate
+    return font(minimum_size, weight)
 
 
 def background(seed: int, glow_x: int, glow_y: int) -> Image.Image:
@@ -75,7 +117,7 @@ def add_brand(canvas: Image.Image) -> None:
     draw.text((202, 91), "VORB", font=font(43, "Semibold"), fill=(242, 241, 248))
     draw.text(
         (350, 103),
-        "WHISPER DICTATION FOR macOS",
+        COPY["brand"],
         font=font(24, "Medium"),
         fill=(158, 158, 176),
     )
@@ -102,11 +144,15 @@ def add_copy(
             fill=(249, 248, 252),
         )
     support_y = y + len(headline.split("\n")) * line_height + 48
-    words = supporting.split()
+    # CJK marketing copy has no inter-word spaces, so wrap it by character.
+    # Latin and Cyrillic copy keeps natural word boundaries.
+    compact_script = ACTIVE_LOCALE in {"ja", "zh-Hans"}
+    words = list(supporting) if compact_script else supporting.split()
+    separator = "" if compact_script else " "
     lines: list[str] = []
     current = ""
     for word in words:
-        candidate = f"{current} {word}".strip()
+        candidate = f"{current}{separator}{word}".strip()
         if draw.textlength(candidate, font=supporting_font) > max_width and current:
             lines.append(current)
             current = word
@@ -137,16 +183,42 @@ def paste_with_shadow(
     if source.mode != "RGBA":
         source = source.convert("RGBA")
 
+    # Render the shadow on a padded surface. Blurring inside the source-sized
+    # bounds clipped the soft edge and exposed a dark rectangular strip below
+    # window captures.
     alpha = source.getchannel("A")
-    shadow = Image.new("RGBA", source.size, (0, 0, 0, 0))
-    shadow.putalpha(alpha.filter(ImageFilter.GaussianBlur(shadow_radius)))
-    dark = Image.new("RGBA", source.size, (0, 0, 0, 185))
-    dark.putalpha(shadow.getchannel("A"))
+    padding = max(32, shadow_radius * 2)
+    shadow_mask = Image.new(
+        "L",
+        (source.width + padding * 2, source.height + padding * 2),
+        0,
+    )
+    shadow_mask.paste(alpha, (padding, padding))
+    shadow_mask = shadow_mask.filter(ImageFilter.GaussianBlur(shadow_radius))
+    shadow_opacity = shadow_mask.point(lambda value: round(value * 0.58))
+    dark = Image.new("RGBA", shadow_mask.size, (0, 0, 0, 0))
+    dark.putalpha(shadow_opacity)
     canvas.alpha_composite(
         dark,
-        (position[0] + shadow_offset[0], position[1] + shadow_offset[1]),
+        (
+            position[0] + shadow_offset[0] - padding,
+            position[1] + shadow_offset[1] - padding,
+        ),
     )
     canvas.alpha_composite(source, position)
+
+
+def window_capture(path: Path, corner_radius: int = 48) -> Image.Image:
+    """Remove the desktop pixels outside a captured macOS window."""
+    source = Image.open(path).convert("RGBA")
+    mask = Image.new("L", source.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle(
+        (1, 1, source.width - 2, source.height - 2),
+        radius=corner_radius,
+        fill=255,
+    )
+    source.putalpha(mask)
+    return source
 
 
 def rounded_detail(source: Image.Image, box: tuple[int, int, int, int]) -> Image.Image:
@@ -223,132 +295,143 @@ def save(canvas: Image.Image, name: str) -> None:
 
 
 def screenshot_one() -> None:
+    screen = COPY["screens"][0]
     canvas = contextual_background("01-dictating-at-desk.png", left_darken=235)
     add_brand(canvas)
     add_copy(
         canvas,
-        "Your thoughts.\nAlready typed.",
-        "Speak naturally. Vorb turns your voice into text before the idea disappears.",
+        screen["headline"],
+        screen["supporting"],
         y=270,
+        headline_size=screen.get("headline_size", 112),
         max_width=1120,
     )
+    first, second, third = screen["pills"]
     x = 175
-    x += pill(canvas, "SPEECH → TEXT", x, 1260, accent=True) + 24
-    x += pill(canvas, "⌥ SPACE", x, 1260) + 24
-    pill(canvas, "COPY ANYWHERE", x, 1260)
+    x += pill(canvas, first, x, 1260, accent=True) + 24
+    x += pill(canvas, second, x, 1260) + 24
+    pill(canvas, third, x, 1260)
     save(canvas, "01-capture-thoughts.png")
 
 
 def screenshot_two() -> None:
+    screen = COPY["screens"][1]
     canvas = contextual_background("02-waveform-to-text.png", left_darken=155)
     add_brand(canvas)
     add_copy(
         canvas,
-        "Say it.\nPaste it.",
-        "One shortcut turns your voice into text you can paste wherever you work.",
+        screen["headline"],
+        screen["supporting"],
         y=245,
+        headline_size=screen.get("headline_size", 112),
         max_width=1050,
     )
+    first, second, third = screen["pills"]
     x = 175
-    x += pill(canvas, "VOICE", x, 1310, accent=True) + 20
-    x += pill(canvas, "→", x, 1310, width=82) + 20
-    pill(canvas, "TEXT", x, 1310)
+    x += pill(canvas, first, x, 1310, accent=True) + 20
+    x += pill(canvas, second, x, 1310, width=82) + 20
+    pill(canvas, third, x, 1310)
 
     draw = ImageDraw.Draw(canvas)
     draw.text(
         (1840, 520),
-        "TRANSCRIBED TEXT",
+        screen["transcript_label"],
         font=font(27, "Semibold"),
         fill=(168, 144, 240),
     )
+    transcript_font = fitted_font(screen["transcript"], 52, 820, "Medium", 38)
     draw.multiline_text(
         (1840, 625),
-        "Remember to send the final draft\nbefore lunch.",
-        font=font(52, "Medium"),
+        screen["transcript"],
+        font=transcript_font,
         fill=(245, 243, 250),
         spacing=20,
     )
-    draw.rounded_rectangle(
-        (1840, 875, 2290, 942),
-        radius=33,
-        fill=(76, 48, 145, 235),
-        outline=(157, 126, 239, 255),
-        width=2,
+    ready_width = min(
+        830,
+        max(
+            450,
+            round(draw.textlength(screen["ready"], font=font(28, "Semibold"))) + 80,
+        ),
     )
-    draw.text(
-        (1928, 890),
-        "READY TO PASTE",
-        font=font(28, "Semibold"),
-        fill=(245, 241, 255),
-    )
+    pill(canvas, screen["ready"], 1840, 875, width=ready_width, accent=True)
     save(canvas, "02-speech-to-clean-text.png")
 
 
 def screenshot_three() -> None:
+    screen = COPY["screens"][2]
     canvas = contextual_background("03-dictate-anywhere.png", left_darken=225)
     add_brand(canvas)
     add_copy(
         canvas,
-        "One voice.\nEvery writing task.",
-        "Dictate notes, emails, messages, and prompts—then paste the result wherever you work.",
+        screen["headline"],
+        screen["supporting"],
         y=245,
+        headline_size=screen.get("headline_size", 112),
         max_width=1050,
     )
     x = 175
-    for label in ["EMAIL", "NOTES", "MESSAGES"]:
-        x += pill(canvas, label, x, 1290, accent=label == "EMAIL") + 18
+    for index, label in enumerate(screen["pills"]):
+        x += pill(canvas, label, x, 1290, accent=index == 0) + 18
     save(canvas, "03-dictate-anywhere.png")
 
 
 def screenshot_four() -> None:
+    screen = COPY["screens"][3]
     canvas = background(4, 2320, 900)
     add_brand(canvas)
     add_copy(
         canvas,
-        "Whisper stays here.\nSo do your words.",
-        "On-device speech-to-text. No API key. No audio upload.",
+        screen["headline"],
+        screen["supporting"],
         y=315,
+        headline_size=screen.get("headline_size", 112),
     )
+    first, second, third = screen["pills"]
     x = 175
-    x += pill(canvas, "NO KEY", x, 1060, accent=True) + 20
-    x += pill(canvas, "ON-DEVICE", x, 1060) + 20
-    pill(canvas, "CORE ML", x, 1060)
+    x += pill(canvas, first, x, 1060, accent=True) + 20
+    x += pill(canvas, second, x, 1060) + 20
+    pill(canvas, third, x, 1060)
 
-    settings = Image.open(RAW / "settings-local.png").convert("RGBA")
+    settings = window_capture(RAW / "settings-local.png")
     paste_with_shadow(canvas, settings, (1660, 240), 1050)
     save(canvas, "04-private-whisper.png")
 
 
 def screenshot_five() -> None:
+    screen = COPY["screens"][4]
     canvas = background(5, 2290, 600)
     add_brand(canvas)
     add_copy(
         canvas,
-        "Your keys.\nZero lock-in.",
-        "Connect Groq, OpenAI, Deepgram, or any compatible speech-to-text endpoint.",
+        screen["headline"],
+        screen["supporting"],
         y=315,
+        headline_size=screen.get("headline_size", 112),
     )
     x = 175
-    for label in ["GROQ", "OPENAI", "DEEPGRAM"]:
-        x += pill(canvas, label, x, 1050, accent=label == "GROQ") + 18
-    pill(canvas, "+ MORE", 175, 1135)
+    for index, label in enumerate(screen["pills"][:3]):
+        x += pill(canvas, label, x, 1050, accent=index == 0) + 18
+    pill(canvas, screen["pills"][3], 175, 1135)
 
-    settings = Image.open(RAW / "settings-provider.png").convert("RGBA")
+    settings = window_capture(RAW / "settings-provider.png")
     paste_with_shadow(canvas, settings, (1660, 240), 1050)
     save(canvas, "05-bring-your-provider.png")
 
 
 def screenshot_six() -> None:
+    screen = COPY["screens"][5]
     canvas = background(6, 2050, 1120)
     add_brand(canvas)
     add_copy(
         canvas,
-        "Fast or accurate?\nYou decide.",
-        "Pick the Whisper model and language that fit the moment.",
+        screen["headline"],
+        screen["supporting"],
         y=250,
+        headline_size=screen.get("headline_size", 112),
     )
     x = 175
-    for label in ["TINY", "BASE", "SMALL", "LARGE V3"]:
+    for label in screen["pills"]:
         x += pill(canvas, label, x, 1030, accent=label == "SMALL") + 16
 
     settings = Image.open(RAW / "settings-local.png").convert("RGBA")
@@ -358,39 +441,44 @@ def screenshot_six() -> None:
 
 
 def screenshot_seven() -> None:
+    screen = COPY["screens"][6]
     canvas = background(7, 1800, 1200)
     add_brand(canvas)
     add_copy(
         canvas,
-        "Never lose a\ngood thought again.",
-        "Keep an optional local transcript history, ready to copy when you need it.",
+        screen["headline"],
+        screen["supporting"],
         y=220,
+        headline_size=screen.get("headline_size", 112),
         max_width=700,
     )
-    pill(canvas, "LOCAL HISTORY", 178, 960, accent=True)
-    pill(canvas, "COPY", 480, 960)
-    pill(canvas, "DELETE", 670, 960)
+    x = 178
+    for index, label in enumerate(screen["pills"]):
+        x += pill(canvas, label, x, 960, accent=index == 0) + 18
 
-    history = Image.open(RAW / "history.png").convert("RGBA")
+    history = window_capture(RAW / "history.png", corner_radius=40)
     paste_with_shadow(canvas, history, (940, 570), 1780)
     save(canvas, "07-history.png")
 
 
 def screenshot_eight() -> None:
+    screen = COPY["screens"][7]
     canvas = background(8, 2250, 980)
     add_brand(canvas)
     add_copy(
         canvas,
-        "Tap once.\nOr hold and talk.",
-        "Choose any global shortcut and make voice typing feel automatic.",
+        screen["headline"],
+        screen["supporting"],
         y=285,
+        headline_size=screen.get("headline_size", 112),
     )
+    first, second, third = screen["pills"]
     x = 175
-    x += pill(canvas, "⌥ SPACE", x, 1060, accent=True) + 20
-    x += pill(canvas, "TOGGLE", x, 1060) + 20
-    pill(canvas, "HOLD", x, 1060)
+    x += pill(canvas, first, x, 1060, accent=True) + 20
+    x += pill(canvas, second, x, 1060) + 20
+    pill(canvas, third, x, 1060)
 
-    settings = Image.open(RAW / "settings-shortcut.png").convert("RGBA")
+    settings = window_capture(RAW / "settings-shortcut.png")
     paste_with_shadow(canvas, settings, (1660, 240), 1050)
     save(canvas, "08-shortcut.png")
 
@@ -415,10 +503,18 @@ def contact_sheet() -> None:
         x = (index % 2) * 720
         y = (index // 2) * 450
         sheet.paste(thumb, (x, y))
-    sheet.save(FINAL / "contact-sheet.jpg", "JPEG", quality=90)
+    # PNG avoids relying on an optional JPEG codec in minimal release
+    # environments and keeps small UI text crisp during review.
+    sheet.save(FINAL / "contact-sheet.png", "PNG", compress_level=3)
 
 
-def main() -> None:
+def generate_locale(locale: str, output: Path, raw: Path) -> None:
+    global ACTIVE_LOCALE, COPY, RAW, FINAL
+    ACTIVE_LOCALE = locale
+    COPY = LOCALIZATIONS[locale]
+    RAW = raw
+    FINAL = output
+
     required = [
         RAW / "settings-local.png",
         RAW / "settings-provider.png",
@@ -441,6 +537,27 @@ def main() -> None:
     screenshot_seven()
     screenshot_eight()
     contact_sheet()
+    print(f"Generated {locale}: {FINAL}")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--locale", choices=LOCALE_ORDER)
+    parser.add_argument("--all-locales", action="store_true")
+    arguments = parser.parse_args()
+
+    if arguments.all_locales:
+        for locale in LOCALE_ORDER:
+            raw = RAW_ROOT if locale == "en-US" else RAW_ROOT / locale
+            generate_locale(locale, LOCALIZED_ROOT / locale, raw)
+        return
+
+    if arguments.locale:
+        raw = RAW_ROOT if arguments.locale == "en-US" else RAW_ROOT / arguments.locale
+        generate_locale(arguments.locale, LOCALIZED_ROOT / arguments.locale, raw)
+        return
+
+    generate_locale("en-US", FINAL_ROOT, RAW_ROOT)
 
 
 if __name__ == "__main__":

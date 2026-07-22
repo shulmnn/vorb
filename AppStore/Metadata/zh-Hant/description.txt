@@ -1,12 +1,12 @@
-Vorb 透過一個鍵盤快速鍵將您的語音轉換為文字。
+Vorb 使用一個鍵盤快速鍵將您的語音轉換為文字。
 
-按 Option–Space 開始和停止，或選擇保持講話。 Vorb 轉錄您的錄音並將結果複製到剪貼簿。
+按Option–Space開始和停止，或選擇保持講話。 Vorb 轉錄您的錄音並將結果複製到剪貼簿。
 
 私人·本地耳語
-將您的語音完全轉錄為 Mac 上的文本，無需 API 鍵。僅當您按一下「下載模型」時才會下載模型。您也可以匯入現有的 WhisperKit 模型。
+完全在 Mac 上將您的語音轉錄為文本，無需 API 鍵。僅當您按一下「下載模型」時才會下載模型。您也可以匯入現有的 WhisperKit 模型。
 
 帶上您自己的提供者
-連線 Groq、OpenAI、Deepgram、Mistral、ElevenLabs、自託管伺服器或其他相容端點。密鑰保留在 macOS Keychain 中，音訊直接傳送到您選擇的提供者。
+連接 Groq、OpenAI、Deepgram、Mistral、ElevenLabs、自託管伺服器或其他相容端點。金鑰保留在macOSKeychain，音訊直接傳送到您選擇的提供者。
 
 專為專注工作而打造
 • 可設定的全域快捷方式
@@ -15,6 +15,6 @@ Vorb 透過一個鍵盤快速鍵將您的語音轉換為文字。
 • 剪貼簿傳送
 • Optional 本地成績單歷史記錄
 • 自動語言偵測
-• 沒有 Vorb 帳號、分析、廣告或訂閱
+• 無Vorb 帳號、分析、廣告或訂閱
 
 Local Whisper 需要 Apple 晶片。線上提供程式和模型下載需要網路連線。

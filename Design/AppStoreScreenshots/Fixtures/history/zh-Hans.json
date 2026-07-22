@@ -1,0 +1,5 @@
+[
+  {"id":"11111111-1111-4111-8111-111111111111","text":"把发布笔记整理成简短的清单，并在午饭前发送最终稿。","createdAt":806431320,"provider":"Local Whisper","model":"Small"},
+  {"id":"22222222-2222-4222-8222-222222222222","text":"最快的界面会在需要时出现，完成后立即消失。","createdAt":806427840,"provider":"Groq","model":"Whisper Large V3 Turbo"},
+  {"id":"33333333-3333-4333-8333-333333333333","text":"发布前请检查隐私页面、支持链接、截图和审核说明。","createdAt":806345340,"provider":"OpenAI","model":"GPT-4o Mini Transcribe"}
+]

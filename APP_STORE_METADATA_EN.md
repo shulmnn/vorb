@@ -94,7 +94,7 @@ These permanent HTTPS pages are live.
 
 ## Screenshots
 
-Use the eight 2880 × 1800 PNG files without transparency, in the order below. The first three use original conceptual artwork to explain the dictation workflow; the remaining five show the real App Store build. Keep all customer-visible text in English.
+Use the eight 2880 × 1800 PNG files without transparency, in the order below. The first three use original conceptual artwork to explain the dictation workflow; the remaining five show the real App Store build. Use the English set for English (U.S.) and the matching fully localized set for German, French, Spanish (Spain), Portuguese (Brazil), Italian, Japanese, Korean, Simplified Chinese, and Russian.
 
 | Order | Headline | Supporting line | Screen to capture |
 | --- | --- | --- | --- |
