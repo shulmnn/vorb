@@ -4,6 +4,38 @@ struct NativeOrb: View {
     let phase: DictationPhase
     var audioLevel: Double = 0
 
+    private struct Particle {
+        let index: CGFloat
+        let x: CGFloat
+        let y: CGFloat
+        let z: CGFloat
+        let longitude: CGFloat
+    }
+
+    // A fixed Fibonacci sphere keeps every particle spatially anchored. Motion is
+    // applied along the sphere's surface normal, never by rotating the cloud.
+    private static let particles: [Particle] = {
+        let count = 104
+        return (0..<count).map { index in
+            let value = CGFloat(index)
+            let fraction = (value + 0.5) / CGFloat(count)
+            let y = 1 - 2 * fraction
+            let longitude = value * 2.399_963_2
+            let horizontalRadius = sqrt(max(0, 1 - y * y))
+            let radialSeed = abs(sin((value + 1) * 12.989_8) * 43_758.545_3)
+                .truncatingRemainder(dividingBy: 1)
+            let volumeRadius = 0.14 + pow(radialSeed, 0.62) * 0.86
+            return Particle(
+                index: value,
+                x: cos(longitude) * horizontalRadius * volumeRadius,
+                y: y * volumeRadius,
+                z: sin(longitude) * horizontalRadius * volumeRadius,
+                longitude: longitude
+            )
+        }
+        .sorted { $0.z < $1.z }
+    }()
+
     var body: some View {
         TimelineView(.animation(minimumInterval: 1.0 / 30.0)) { timeline in
             Canvas { context, size in
@@ -22,71 +54,59 @@ struct NativeOrb: View {
         let side = min(size.width, size.height)
         let center = CGPoint(x: size.width / 2, y: size.height / 2)
         let radius = side * 0.35
-        let particleCount = 104
         let level = phase == .recording
             ? CGFloat(max(0, min(1, audioLevel)))
             : 0
-        let speed: CGFloat
-        switch phase {
-        case .recording: speed = 0.24 + level * 0.58
-        case .transcribing: speed = 0.46
-        default: speed = 0.18
-        }
-        let pulse = phase == .recording
-            ? 1 + level * 0.24 + sin(time * 6.2) * level * 0.025
-            : 1 + sin(time * 2.2) * 0.025
+        let ambientBreath = sin(time * 0.78) * 0.014
 
         context.addFilter(
             .shadow(
-                color: .white.opacity(0.10 + Double(level) * 0.20),
-                radius: 2 + level * 4
+                color: .white.opacity(0.08 + Double(level) * 0.16),
+                radius: 1.6 + level * 3
             )
         )
 
-        for index in 0..<particleCount {
-            let indexValue = CGFloat(index)
-            let fraction = (indexValue + 0.5) / CGFloat(particleCount)
-            let goldenAngle = indexValue * 2.399_963_2
-            let baseRadius = sqrt(fraction)
-
-            let phaseOffset: CGFloat
-            let wave: CGFloat
+        for particle in Self.particles {
+            let depth = (particle.z + 1) / 2
+            let expansion: CGFloat
+            let surfaceWave: CGFloat
             switch phase {
             case .recording:
-                phaseOffset = time * speed + sin(indexValue * 0.31) * level * 0.95
-                wave =
-                    sin(time * (4.2 + level * 4.8) + indexValue * 0.23)
-                        * (0.035 + level * 0.11)
-                    + sin(time * 10.8 + indexValue * 0.91) * level * 0.035
+                expansion = level * 0.14
+                surfaceWave = sin(
+                    particle.longitude * 1.7
+                        + particle.y * 3.8
+                        - time * 2.15
+                ) * level * 0.045
             case .transcribing:
-                phaseOffset = time * speed + baseRadius * 5.2
-                wave = sin(time * 2.8 + indexValue * 0.41) * 0.08
+                expansion = sin(time * 0.9) * 0.012
+                surfaceWave = sin(particle.y * 5.2 - time * 1.35) * 0.032
             case .success:
-                phaseOffset = time * 0.25
-                wave = sin(indexValue * 0.4) * 0.018
+                expansion = 0.04 + sin(time * 1.1) * 0.006
+                surfaceWave = 0
             case .failure:
-                phaseOffset = -time * 0.45
-                wave = sin(time * 5 + indexValue) * 0.05
+                expansion = -0.025
+                surfaceWave = sin(time * 2.8 + particle.index * 0.62) * 0.018
             case .idle:
-                phaseOffset = time * 0.35
-                wave = sin(time * 1.4 + indexValue * 0.17) * 0.025
+                expansion = 0
+                surfaceWave = 0
             }
 
-            let theta = goldenAngle + phaseOffset
-            let warpedRadius = max(0.05, baseRadius + wave) * radius * pulse
-            let perspective = 0.68 + 0.32 * sin(theta * 0.55 + time * 0.3)
-            let x = center.x + cos(theta) * warpedRadius
-            let y = center.y + sin(theta) * warpedRadius * perspective
+            let radialScale = 1 + ambientBreath + expansion + surfaceWave
+            let perspective = 0.88 + depth * 0.12
+            let x = center.x + particle.x * radius * radialScale * perspective
+            let y = center.y + particle.y * radius * radialScale * perspective * 0.98
 
-            let edgeFade = 1 - baseRadius * 0.55
-            let shimmer = 0.54 + 0.46 * sin(theta + time * 1.7)
-            let opacity = max(
-                0.12,
-                edgeFade * (0.42 + shimmer * 0.5 + level * 0.18)
+            let slowShimmer = sin(
+                time * 0.72 + particle.longitude * 0.55 + particle.y
+            ) * 0.045
+            let opacity = min(
+                1,
+                max(0.18, 0.24 + depth * 0.68 + slowShimmer + level * 0.08)
             )
-            let voiceScale = 1 + level * (0.25 + (1 - baseRadius) * 0.55)
+            let voiceScale = 1 + level * (0.12 + depth * 0.18)
             let dotSize = side
-                * (0.018 + (1 - baseRadius) * 0.013)
+                * (0.014 + depth * 0.014)
                 * voiceScale
             let dotOrigin = CGPoint(x: x - dotSize / 2, y: y - dotSize / 2)
             let dotDimensions = CGSize(width: dotSize, height: dotSize)
@@ -95,7 +115,6 @@ struct NativeOrb: View {
             let color = particleColor.opacity(Double(opacity))
             context.fill(Path(ellipseIn: rect), with: .color(color))
         }
-
     }
 
     private var particleColor: Color {

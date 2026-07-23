@@ -87,8 +87,14 @@ struct TextInsertionService {
         let clipboardSnapshot = copyToClipboard ? nil : PasteboardSnapshot(pasteboard: .general)
         writeToClipboard(text)
 
-        targetApplication.activate(options: [])
-        try? await Task.sleep(for: .milliseconds(120))
+        // Activation is asynchronous. Waiting for the target to actually become
+        // active avoids sending Command-V while another app still owns focus.
+        if !targetApplication.isActive {
+            _ = targetApplication.activate(options: [.activateAllWindows])
+            for _ in 0..<24 where !targetApplication.isActive {
+                try? await Task.sleep(for: .milliseconds(25))
+            }
+        }
 
         guard let source = CGEventSource(stateID: .combinedSessionState),
               let keyDown = CGEvent(keyboardEventSource: source, virtualKey: 9, keyDown: true),
@@ -102,11 +108,15 @@ struct TextInsertionService {
 
         keyDown.flags = .maskCommand
         keyUp.flags = .maskCommand
-        keyDown.post(tap: .cghidEventTap)
-        keyUp.post(tap: .cghidEventTap)
+        // Deliver directly to the captured process instead of the global event
+        // stream. This preserves the previously focused text field even if a
+        // floating panel or another utility briefly changes frontmost status.
+        keyDown.postToPid(targetApplication.processIdentifier)
+        try? await Task.sleep(for: .milliseconds(12))
+        keyUp.postToPid(targetApplication.processIdentifier)
 
         if let clipboardSnapshot {
-            try? await Task.sleep(for: .milliseconds(250))
+            try? await Task.sleep(for: .milliseconds(500))
             clipboardSnapshot.restore(to: .general, ifCurrentTextIs: text)
         }
         return .pasted(copiedToClipboard: copyToClipboard)
