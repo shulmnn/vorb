@@ -18,8 +18,8 @@ struct DictationOverlayView: View {
             phase: model.phase,
             audioLevel: model.audioLevel
         )
-        .frame(width: 54, height: 54)
-        .padding(7)
+        .frame(width: 60, height: 60)
+        .padding(4)
         .background {
             Circle()
                 .fill(.black.opacity(0.91))
