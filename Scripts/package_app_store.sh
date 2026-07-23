@@ -12,7 +12,7 @@ installer_identity="${APP_STORE_INSTALLER_IDENTITY:-}"
 provisioning_profile="${APP_STORE_PROVISIONING_PROFILE:-}"
 signing_keychain="${APP_STORE_KEYCHAIN:-}"
 marketing_version="${MARKETING_VERSION:-1.0}"
-build_number="${BUILD_NUMBER:-2}"
+build_number="${BUILD_NUMBER:-3}"
 production_entitlements="$repo_root/Packaging/AppStore.entitlements"
 development_entitlements="$repo_root/Packaging/AppStoreDevelopment.entitlements"
 

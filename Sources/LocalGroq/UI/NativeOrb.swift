@@ -28,9 +28,9 @@ struct NativeOrb: View {
             : 0
         let speed: CGFloat
         switch phase {
-        case .recording: speed = 0.8 + level * 2.2
-        case .transcribing: speed = 1.7
-        default: speed = 0.75
+        case .recording: speed = 0.24 + level * 0.58
+        case .transcribing: speed = 0.46
+        default: speed = 0.18
         }
         let pulse = phase == .recording
             ? 1 + level * 0.24 + sin(time * 6.2) * level * 0.025

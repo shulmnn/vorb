@@ -1,6 +1,6 @@
 # Mac App Store release checklist
 
-Vorb uses the bundle identifier `vorb.shulmnn.com`, version `1.0`, build `2`, and the Productivity category.
+Vorb uses the bundle identifier `vorb.shulmnn.com`, version `1.0`, build `3`, and the Productivity category.
 
 Use [APP_STORE_METADATA_EN.md](APP_STORE_METADATA_EN.md) for the complete English (U.S.) product-page copy, App Review notes, privacy and age-rating answers, screenshot copy, compliance fields, and TestFlight metadata.
 
@@ -20,7 +20,7 @@ APP_STORE_SIGNING_IDENTITY="Apple Distribution: COMPANY (TEAMID)" \
 APP_STORE_INSTALLER_IDENTITY="3rd Party Mac Developer Installer: COMPANY (TEAMID)" \
 APP_STORE_PROVISIONING_PROFILE="/absolute/path/to/profile.provisionprofile" \
 MARKETING_VERSION="1.0" \
-BUILD_NUMBER="2" \
+BUILD_NUMBER="3" \
 ./Scripts/package_app_store.sh
 ```
 

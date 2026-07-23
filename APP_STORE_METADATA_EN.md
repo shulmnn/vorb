@@ -12,7 +12,7 @@ Submission copy for Vorb 1.0. The App Review phone field must still be completed
 | Bundle ID | `vorb.shulmnn.com` |
 | SKU | `VORB-MAC-001` |
 | Version | `1.0` |
-| Build | `2` |
+| Build | `3` |
 | Copyright | 2026 Amnios Group |
 | Primary category | Productivity |
 | Secondary category | Utilities |

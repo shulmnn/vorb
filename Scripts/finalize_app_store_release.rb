@@ -5,7 +5,7 @@ require "spaceship"
 
 APP_ID = ENV.fetch("ASC_APP_ID", "6793676551")
 APP_VERSION = ENV.fetch("ASC_APP_VERSION", "1.0")
-BUILD_NUMBER = ENV.fetch("ASC_BUILD_NUMBER", "2")
+BUILD_NUMBER = ENV.fetch("ASC_BUILD_NUMBER", "3")
 PLATFORM = Spaceship::ConnectAPI::Platform::MAC_OS
 SCREENSHOTS_PATH = Pathname.new(
   ENV.fetch(
