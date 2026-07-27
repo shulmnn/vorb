@@ -1,52 +1,46 @@
 (() => {
-  const demo = document.querySelector(".demo-window");
-  if (!demo || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealItems = document.querySelectorAll(".reveal");
 
-  const title = demo.querySelector("[data-demo-title]");
-  const hint = demo.querySelector("[data-demo-hint]");
-  const status = demo.querySelector("[data-demo-status]");
-  const transcript = demo.querySelector("[data-demo-transcript]");
-  const transcripts = [
-    "Remember to send the final draft before lunch.",
-    "Move the product review to Thursday afternoon.",
-    "The opening should feel direct, useful, and human."
-  ];
-  let transcriptIndex = 0;
-  let timer;
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  } else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
 
-  const setState = (state) => {
-    demo.dataset.state = state;
+    revealItems.forEach((item) => revealObserver.observe(item));
+  }
 
-    if (state === "listening") {
-      transcriptIndex = (transcriptIndex + 1) % transcripts.length;
-      title.textContent = "Listening";
-      hint.textContent = "to finish";
-      status.textContent = "Live";
-      transcript.textContent = transcripts[transcriptIndex];
-      timer = window.setTimeout(() => setState("transcribing"), 4200);
-      return;
+  const flowSteps = Array.from(document.querySelectorAll(".flow-list li"));
+  if (!reducedMotion && flowSteps.length && "IntersectionObserver" in window) {
+    const stepObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        flowSteps.forEach((step) => step.classList.toggle("is-active", step === entry.target));
+      });
+    }, { threshold: 0.72 });
+
+    flowSteps.forEach((step) => stepObserver.observe(step));
+  }
+
+  if (!reducedMotion) {
+    const hero = document.querySelector(".hero-panel");
+    const art = document.querySelector(".hero-art");
+    if (hero && art && window.matchMedia("(pointer: fine)").matches) {
+      hero.addEventListener("pointermove", (event) => {
+        const bounds = hero.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+        art.style.transform = `scale(1.035) translate(${x * -6}px, ${y * -4}px)`;
+      });
+      hero.addEventListener("pointerleave", () => {
+        art.style.transform = "scale(1.012)";
+      });
     }
-
-    if (state === "transcribing") {
-      title.textContent = "Transcribing";
-      hint.textContent = "processing locally";
-      status.textContent = "Working";
-      timer = window.setTimeout(() => setState("copied"), 1500);
-      return;
-    }
-
-    title.textContent = "Copied";
-    hint.textContent = "ready to paste";
-    status.textContent = "Copied";
-    timer = window.setTimeout(() => setState("listening"), 2200);
-  };
-
-  timer = window.setTimeout(() => setState("transcribing"), 4200);
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      window.clearTimeout(timer);
-    } else {
-      setState("listening");
-    }
-  });
+  }
 })();
